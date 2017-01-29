@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "inputMessage",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "rssfeedqueue",
+      "connection": "<yourstorage>_STORAGE"
+    }
+  ],
+  "disabled": false
+}
