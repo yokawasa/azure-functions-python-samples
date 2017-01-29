@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */5 * * * *"
+    },
+    {
+      "type": "documentDB",
+      "name": "outputDocument",
+      "databaseName": "functions2docdb",
+      "collectionName": "indexstats",
+      "createIfNotExists": true,
+      "connection": "yoichikademo1_DOCUMENTDB",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
