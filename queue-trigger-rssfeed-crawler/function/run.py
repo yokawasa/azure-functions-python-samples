@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+"""
+
+Azure Functions Queue Trigger Python Sample
+- Get RSS feed URL from Queue and dump all items that obtained from RSS feed
+
+"""
+
 import os
 import sys
 sys.path.append("site-packages")
