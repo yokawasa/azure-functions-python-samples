@@ -12,7 +12,7 @@
       "databaseName": "functions2docdb",
       "collectionName": "indexstats",
       "createIfNotExists": true,
-      "connection": "yoichikademo1_DOCUMENTDB",
+      "connection": "<Connection string for your documentdb account>",
       "direction": "out"
     }
   ],

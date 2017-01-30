@@ -5,7 +5,7 @@
       "type": "queueTrigger",
       "direction": "in",
       "queueName": "blobqueue",
-      "connection": "lrsjapanwestv2_STORAGE"
+      "connection": "<Connection string for your storage account>"
     }
   ],
   "disabled": false
