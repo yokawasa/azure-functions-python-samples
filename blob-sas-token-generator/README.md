@@ -37,7 +37,7 @@ HTTP response body format is:
 
 Sample Response Body
 ```
-"{\"url\": \"https://testfunction.blob.core.windows.net/functiontest/sample.png?sig=VG6twMtK381vfaeaiyYsFHwfhyenWYjJdytwN7s3lqo%3D&srt=o&ss=b&spr=https&sp=rl&sv=2015-12-11&se=2017-07-02T00%3A28%3A14Z&st=2017-07-01T23%3A28%3A14Z\", \"token\": \"VG6twMtK381vfaeaiyYsFHwfhyenWYjJdytwN7s3lqo=\"}"
+{'url': 'https://testfunction.blob.core.windows.net/functiontest/yokawasa.png?sig=sXBjML1Fpk9UnTBtajo05ZTFSk0LWFGvARZ6WlVcAog%3D&srt=o&ss=b&spr=https&sp=rl&sv=2016-05-31&se=2017-07-01T00%3A21%3A38Z&st=2017-07-01T23%3A16%3A38Z', 'token': 'sig=sXBjML1Fpk9UnTBtajo05ZTFSk0LWFGvARZ6WlVcAog%3D&srt=o&ss=b&spr=https&sp=rl&sv=2016-05-31&se=2017-07-01T00%3A21%3A38Z&st=2017-07-01T23%3A16%3A38Z'}
 ```
 
 ## Test Command

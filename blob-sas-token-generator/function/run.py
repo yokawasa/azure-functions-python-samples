@@ -33,7 +33,7 @@ HTTP response body format is:
 }
 
 Sample Response Body
-"{\"url\": \"https://testfunction.blob.core.windows.net/functiontest/yokawasa.png?sig=VG6twMtK381vfaeaiyYsFHwfhyenWYjJdytwN7s3lqo%3D&srt=o&ss=b&spr=https&sp=rl&sv=2015-12-11&se=2017-07-02T00%3A28%3A14Z&st=2017-07-01T23%3A28%3A14Z\", \"token\": \"VG6twMtK381vfaeaiyYsFHwfhyenWYjJdytwN7s3lqo=\"}"
+{'url': 'https://testfunction.blob.core.windows.net/functiontest/yokawasa.png?sig=sXBjML1Fpk9UnTBtajo05ZTFSk0LWFGvARZ6WlVcAog%3D&srt=o&ss=b&spr=https&sp=rl&sv=2016-05-31&se=2017-07-01T00%3A21%3A38Z&st=2017-07-01T23%3A16%3A38Z', 'token': 'sig=sXBjML1Fpk9UnTBtajo05ZTFSk0LWFGvARZ6WlVcAog%3D&srt=o&ss=b&spr=https&sp=rl&sv=2016-05-31&se=2017-07-01T00%3A21%3A38Z&st=2017-07-01T23%3A16%3A38Z'}
 
 """
 import sys
@@ -46,7 +46,7 @@ import urllib
 from datetime import datetime, timedelta
 
 _ALLOWED_HTTP_METHOD = "POST"
-_AZURE_STORAGE_API_VERSION = "2015-12-11"
+_AZURE_STORAGE_API_VERSION = "2016-05-31"
 _AZURE_STORAGE_CONN_STRING_ENV_NAME = "AZUREWEBJOBSSTORAGE"
 _AZURE_FUNCTION_HTTP_INPUT_ENV_NAME = "req"
 _AZURE_FUNCTION_HTTP_OUTPUT_ENV_NAME = "res"
@@ -65,7 +65,8 @@ def write_http_response(status, body_dict):
 
 def generate_sas_token (storage_account, storage_key, permission, token_ttl, container_name, blob_name = None ):
     sp = permission
-    st= str(datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))
+    # Set start time to five minutes ago to avoid clock skew.
+    st= str((datetime.utcnow() - timedelta(minutes=5) ).strftime("%Y-%m-%dT%H:%M:%SZ"))
     se= str((datetime.utcnow() + timedelta(hours=token_ttl)).strftime("%Y-%m-%dT%H:%M:%SZ"))
     srt = 'o' if blob_name else 'co'
 
@@ -95,6 +96,7 @@ def generate_sas_token (storage_account, storage_key, permission, token_ttl, con
         'spr': 'https',
         'sig': sig,
     }
+    sastoken = urllib.urlencode(querystring)
 
     sas_url = None
     if blob_name:
@@ -102,15 +104,15 @@ def generate_sas_token (storage_account, storage_key, permission, token_ttl, con
             storage_account,
             container_name,
             blob_name,
-            urllib.urlencode(querystring))
+            sastoken)
     else:
         sas_url = "https://{0}.blob.core.windows.net/{1}?{2}".format(
             storage_account,
             container_name,
-            urllib.urlencode(querystring))
+            sastoken)
 
     return {
-            'token': sig,
+            'token': sastoken,
             'url' : sas_url
            }
 
