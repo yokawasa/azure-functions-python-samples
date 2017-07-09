@@ -1,6 +1,8 @@
 # azure-functions-python-samples
 Azure Functions Python Sample Codes
 
+![](https://github.com/yokawasa/azure-functions-python-samples/raw/master/img/azure-function-x-python.png)
+
 ```
 git clone https://github.com/yokawasa/azure-functions-python-samples.git
 cd azure-functions-python-samples
@@ -23,3 +25,4 @@ Queue Trigger | Azure Functions Queue Trigger Python Sample that tags images sto
 HTTP Trigger | Azure Functions HTTP Trigger Python Sample that get and dump HTTPS request info that the trigger receives | [http-trigger-dump-request](https://github.com/yokawasa/azure-functions-python-samples/tree/master/http-trigger-dump-request) |
 HTTP Trigger | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | [blob-sas-token-generator](https://github.com/yokawasa/azure-functions-python-samples/tree/master/blob-sas-token-generator) |
 Timer Trigger | Azure Functions Timer Trigger Python Sample that get Azure Search index statistics via API and store the results into DocumentDB | [timer-trigger-azuresearch-index-monitoring](https://github.com/yokawasa/azure-functions-python-samples/tree/master/timer-trigger-azuresearch-index-monitoring) |
+EventHub Trigger | Azure Functions EventHub Trigger Python Sample that read message (device info) in EventHub that sent from sender and write an output record to Azure Table Storage | [eventhub-trigger-device-data-write-table](https://github.com/yokawasa/azure-functions-python-samples/tree/master/eventhub-trigger-device-data-write-table) |
