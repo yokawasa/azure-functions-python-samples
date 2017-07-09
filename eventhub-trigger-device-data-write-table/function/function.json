@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "myEventHubMessage",
+      "path": "functionshub",
+      "consumerGroup": "$Default",
+      "connection": "yoichika-eventhub01_rootfunctionshub_EVENTHUB",
+      "cardinality": "one",
+      "direction": "in"
+    },
+    {
+      "type": "table",
+      "name": "outputTable",
+      "tableName": "functionOutTable",
+      "connection": "azurefunctionsb5d4aebe_STORAGE",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
