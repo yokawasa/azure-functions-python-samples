@@ -3,17 +3,17 @@
     {
       "type": "eventHubTrigger",
       "name": "myEventHubMessage",
-      "path": "functionshub",
+      "path": "<eventhub-entitiy-name>",
       "consumerGroup": "$Default",
-      "connection": "yoichika-eventhub01_rootfunctionshub_EVENTHUB",
+      "connection": "<eventhub-namespace>_<SAS-policy-name>_EVENTHUB",
       "cardinality": "one",
       "direction": "in"
     },
     {
       "type": "table",
       "name": "outputTable",
-      "tableName": "functionOutTable",
-      "connection": "azurefunctionsb5d4aebe_STORAGE",
+      "tableName": "<table-name>",
+      "connection": "<storage-account-name>_STORAGE",
       "direction": "out"
     }
   ],
