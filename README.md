@@ -31,7 +31,7 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 ## Tips
 
 * [Running Python Code on Azure Functions App](https://prmadi.com/running-python-code-on-azure-functions-app/)
-* [Using a custom version of Python](://github.com/Azure/azure-webjobs-sdk-script/wiki/Using-a-custom-version-of-Python)
+* [Using a custom version of Python](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Using-a-custom-version-of-Python)
 
 ## Contributing
 
