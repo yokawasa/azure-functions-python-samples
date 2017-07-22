@@ -6,17 +6,42 @@ Azure Functions Python Sample that re-write dynamic and static url using Azure F
 | HTTP Trigger | output:HTTP |
 
 
+## Proxies Configuration
+```
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "url-rewrite-static": {
+            "matchCondition": {
+                "route": "/static/{page}",
+                "methods": [
+                    "GET"
+                ]
+            },
+            "backendUri": "https://<your-blob-account>.blob.core.windows.net/staticpage/{page}"
+        },
+        "url-rewrite-dynamic": {
+            "matchCondition": {
+                "route": "/content/{contentid}"
+            },
+            "backendUri": "https://<func_app_account>.azurewebsites.net/api/<func_name>?contentid={contentid}"
+        }
+    }
+}
+```
+
+
 ## Sample Access
 
 For static access
 ```
-https://<app_account>.azurewebsites.net/static/lasvegas.html
+https://<func_app_account>.azurewebsites.net/static/lasvegas.html
 ```
 ![](https://github.com/yokawasa/azure-functions-python-samples/raw/master/proxies-simple-condition-matches/img/static-page-result.png)
 
 For dynamic access
 ```
-https://<app_account>.azurewebsites.net/content/{contentid}
+https://<func_app_account>.azurewebsites.net/content/{contentid}
 ```
 ![](https://github.com/yokawasa/azure-functions-python-samples/raw/master/proxies-simple-condition-matches/img/dynamic-page-result.png)
 
