@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "url-rewrite-static": {
+            "matchCondition": {
+                "route": "/static/{page}",
+                "methods": [
+                    "GET"
+                ]
+            },
+            "backendUri": "https://yoichikademo.blob.core.windows.net/staticpage/{page}"
+        },
+        "url-rewrite-dynamic": {
+            "matchCondition": {
+                "route": "/content/{contentid}"
+            },
+            "backendUri": "https://yoichikademo1.azurewebsites.net/api/HttpTrigger-Python-Content?contentid={contentid}"
+        }
+    }
+}
