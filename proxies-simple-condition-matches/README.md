@@ -1,5 +1,5 @@
 # proxies-simple-condition-matches
-Azure Functions Python Sample that re-write dynamic and static url using Azure Functions Proxies
+Azure Functions Python Sample that re-write dynamic and static page url using Azure Functions Proxies
 
 | Trigger | In/Out Bindings |
 ------------ | ----------- |
