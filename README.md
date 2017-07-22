@@ -26,7 +26,7 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 | [blob-sas-token-generator](https://github.com/yokawasa/azure-functions-python-samples/tree/master/blob-sas-token-generator)  | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | HTTP Trigger | output:HTTP |
 | [timer-trigger-azuresearch-index-monitoring](https://github.com/yokawasa/azure-functions-python-samples/tree/master/timer-trigger-azuresearch-index-monitoring) | Azure Functions Timer Trigger Python Sample that get Azure Search index statistics via API and store the results into DocumentDB | Timer Trigger | output:DocumentDB |
 | [eventhub-trigger-device-data-write-table](https://github.com/yokawasa/azure-functions-python-samples/tree/master/eventhub-trigger-device-data-write-table) | Azure Functions EventHub Trigger Python Sample that read message (device info) in EventHub that sent from sender and write an output record to Azure Table Storage | EventHub Trigger | output:Table |
-| [proxies-simple-condition-matches](https://github.com/yokawasa/azure-functions-python-samples/tree/master/proxies-simple-condition-matches) | Azure Functions Python Sample that re-write dynamic and static url using Azure Functions Proxies | HTTP Trigger | output:HTTP |
+| [proxies-simple-condition-matches](https://github.com/yokawasa/azure-functions-python-samples/tree/master/proxies-simple-condition-matches) | Azure Functions Python Sample that re-write dynamic and static page url using Azure Functions Proxies | HTTP Trigger | output:HTTP |
 
 
 ## Tips
