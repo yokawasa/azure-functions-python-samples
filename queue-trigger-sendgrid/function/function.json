@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "type": "queueTrigger",
+      "name": "<The name used to identify the trigger data in your code>", 
+      "direction": "in",
+      "queueName": "<Name of queue to poll>",
+      "connection": "<Name of app setting - see (note1)>"
+    },
+    {
+      "type": "sendGrid", 
+      "name": "<The name to identify  the request body in your code>",  
+      "from": "<The sender's email address>",
+      "apiKey": "<Name of app setting for your SendGrid API key>",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

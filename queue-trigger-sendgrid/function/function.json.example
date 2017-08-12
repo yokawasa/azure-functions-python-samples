@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "inputMessage",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "sendgrid-queue",
+      "connection": "azurefunctionsb5d4aebe_STORAGE"
+    },
+    {
+      "type": "sendGrid",
+      "name": "outputMessage",
+      "from": "sender@contoso.com",
+      "apiKey": "MY_SENDGRID_API_KEY",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
