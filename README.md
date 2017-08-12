@@ -9,7 +9,7 @@ cd azure-functions-python-samples
 ```
 
 ## Note
-Sample codes are Python2 compatible, not Python3 as default Python platform version that Azure Functions support is Python 2.7.X (as of July 1st, 2017)
+Sample codes are basically Python2 compatible, not Python3 as default Python platform version that Azure Functions support is Python 2.7.X (as of July 1st, 2017)
 ```
 print ("Python Version = '{0}'".format(platform.python_version()))
 # >>>2017-07-01T05:33:36.202 Python Version = '2.7.8'
