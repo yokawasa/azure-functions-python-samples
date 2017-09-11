@@ -19,7 +19,7 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 
 | Sample | Description | Type | In/Out Bindings
 | ------------- | ------------- | ------------- | ----------- |
-| [blob-trigger-read-write-blob](https://github.com/yokawasa/azure-functions-python-samples/tree/master/blob-trigger-read-write-blob) | Azure Functions Blob Trigger Python Sample that simply read file from Azure Blob Storage and write an output file to Azure Blob Storage | Blob Trigger | input:Blob, outout:Blob |
+| [blob-trigger-blob-in-out-bindings](https://github.com/yokawasa/azure-functions-python-samples/tree/master/blob-trigger-blob-in-out-bindings) | Azure Functions Blob Trigger Python Sample that simply read file from Azure Blob Storage and write an output file to Azure Blob Storage using Blob Storage input and output bindings respectively | Blob Trigger | input:Blob, outout:Blob |
 | [queue-trigger-rssfeed-crawler](https://github.com/yokawasa/azure-functions-python-samples/tree/master/queue-trigger-rssfeed-crawler) | Azure Functions Queue Trigger Python Sample that get RSS feed URL from Queue and dump all items that obtained from RSS feed| Queue Trigger | NONE |
 | [queue-trigger-tagging-images](https://github.com/yokawasa/azure-functions-python-samples/tree/master/queue-trigger-tagging-images) | Azure Functions Queue Trigger Python Sample that tags images stored on Azure Blob Storage by using Cognitive Vision API | Queue Trigger | NONE |
 | [queue-trigger-sendgrid](https://github.com/yokawasa/azure-functions-python-samples/tree/master/queue-trigger-sendgrid) | Azure Functions Queue Trigger Python Sample that send email by using SendGrid bindings | Queue Trigger | output:SendGrid |
