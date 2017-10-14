@@ -10,7 +10,6 @@ https://github.com/anthonyeden/Azure-Functions-Python-HTTP-Example
 
 """
 
-import sys
 import os
 import json
 
