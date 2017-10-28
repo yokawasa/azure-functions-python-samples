@@ -19,6 +19,7 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 
 | Sample | Description | Type | In/Out Bindings
 | ------------- | ------------- | ------------- | ----------- |
+| [cosmosdb-trigger-cosmosdb-in-binding](https://github.com/yokawasa/azure-functions-python-samples/tree/master/cosmosdb-trigger-cosmosdb-in-binding) | Azure Functions CosmosDB Trigger Python Sample. The function simply read & dump documets which are added to or changed in Azure Cosmos DB by leveraging CosmosDB input binding | CosmosDB Trigger | input:CosmosDB (DocumentDB) |
 | [blob-trigger-blob-in-out-bindings](https://github.com/yokawasa/azure-functions-python-samples/tree/master/blob-trigger-blob-in-out-bindings) | Azure Functions Blob Trigger Python Sample that simply read file from Azure Blob Storage and write an output file to Azure Blob Storage using Blob Storage input and output bindings respectively | Blob Trigger | input:Blob, outout:Blob |
 | [queue-trigger-rssfeed-crawler](https://github.com/yokawasa/azure-functions-python-samples/tree/master/queue-trigger-rssfeed-crawler) | Azure Functions Queue Trigger Python Sample that get RSS feed URL from Queue and dump all items that obtained from RSS feed| Queue Trigger | NONE |
 | [queue-trigger-tagging-images](https://github.com/yokawasa/azure-functions-python-samples/tree/master/queue-trigger-tagging-images) | Azure Functions Queue Trigger Python Sample that tags images stored on Azure Blob Storage by using Cognitive Vision API | Queue Trigger | NONE |
@@ -35,6 +36,8 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 * [Running Python Code on Azure Functions App](https://prmadi.com/running-python-code-on-azure-functions-app/)
 * [Using a custom version of Python](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Using-a-custom-version-of-Python)
 * [Work with Azure Functions Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies)
+* [Create a function triggered by Azure Blob storage](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-storage-blob-triggered-function)
+* [Create a function triggered by Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-cosmos-db-triggered-function)
 
 ## Contributing
 
