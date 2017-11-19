@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "inputMessage",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "indoc-queue",
+      "connection": "functionsstore01_STORAGE"
+    },
+    {
+      "type": "documentDB",
+      "name": "inputDocument",
+      "databaseName": "mydb",
+      "collectionName": "mycoll",
+      "sqlQuery": "SELECT * from c where c.id = {queueTrigger}",
+      "connection": "yoichikademo1_DOCUMENTDB",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
