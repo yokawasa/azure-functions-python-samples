@@ -17,6 +17,7 @@ In Site Extensions page, select Gallery menu and typein **Python** as keyword fo
 In App Settings page, scroll down to "Handler Mappings" section, and Add new handler mapping like this:
 ![](../img/custom-python-version-4.png)
 Suppose you installed Python 3.5.4 x64:
+
 | Key | Value
 | ------------- | ------------- | 
 | Extension | fastCgi | 
@@ -24,6 +25,7 @@ Suppose you installed Python 3.5.4 x64:
 | Arguments | D:\home\python354x64\wfastcgi.py | 
 
 Suppose you installed Python 3.6.1 x64:
+
 | Key | Value
 | ------------- | ------------- | 
 | Extension | fastCgi | 
