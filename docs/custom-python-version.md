@@ -32,4 +32,13 @@ Suppose you installed Python 3.6.1 x64:
 
 ## 4. Test the python version beging used in Function App
 Add a new function and add sample code like the following to see which Python version is being used in the Function App:
+```
+import os
+import json
+import platform
+postreqdata = json.loads(open(os.environ['req']).read())
+response = open(os.environ['res'], 'w')
+response.write("Python version: {0}".format(platform.python_version())) 
+response.close()
+```
 ![](../img/custom-python-version-5.png)
