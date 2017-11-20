@@ -1,4 +1,4 @@
-# How to change the Python version being used in a Function App
+# How to change the Python version used in a Function App
 
 ## 1. Create Function App (if you don't have the one yet)
 Create a Function App in the Azure portal by following an article - [Create your first function in the Azure portal - Create a function app](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function#create-a-function-app) 
