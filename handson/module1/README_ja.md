@@ -14,7 +14,7 @@ HTTPトリガーでPOSTリクエストから受け取ったRSSフィードURL �
 ```
 git clone https://github.com/yokawasa/azure-functions-python-samples.git
 ```
-もしくはレポジトリからZIPで[ダウンロード](https://github.com/yokawasa/azure-functions-python-samples/archive/master.zip)
+もしくはレポジトリからZIPで[ダウンロード](https://github.com/yokawasa/azure-functions-python-samples/archive/master.zip)
 
 モジュール1のマテリアル配置場所: azure-functions-python-samples/handson/module1配下
 
@@ -84,5 +84,5 @@ POSTリクエスト送信例:
 curl -s -H "Content-Type: application/json; charset=UTF-8" -XPOST "https://yoichikademo27.azurewebsites.net/api/http-trigger-feed-to-queue?code=dTtNrLDYaaOrF3Gl6lkZfPRMB7Z9I47wYyJhCUWbvnHrzgOUJTp2dw==" -d'{ "feedurl": "https://azure.microsoft.com/en-us/blog/feed/" }'
 ```
 
-キューの確認方法 (キュー名:rssfeedqueue )
+キューの確認方法 (キュー名:rssfeedqueue )
 Azureポータルもしくは[ストレージエクスプローラー](https://azure.microsoft.com/ja-jp/features/storage-explorer/)でキュー名rssfeedqueueの中を確認ください
