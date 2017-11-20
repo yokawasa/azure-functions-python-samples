@@ -3,6 +3,9 @@
 ## 1. Create Function App (if you don't have the one yet)
 Create a Function App in the Azure portal by following an article - [Create your first function in the Azure portal - Create a function app](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function#create-a-function-app) 
 
+[note] Please make sure to choose **App Service Plan** for your Function App's Hosting plan.
+From my experince, Custom Python runtime does always work under Consumption plan (Need to figure out the reason). For the difference between App Service Plan and Consumption plan, please refer to [Azure Functions hosting plans comparison](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-functions/functions-scale.md)
+
 ## 2. Install Python 3.X x64 Site Extention in Kudu UI
 
 In the Platform features page, click **Advanced tools (Kudu)** to go to Kudu UI. Or you can go to Kudo UI with the URL like **https://(your-function-app-name).scm.azurewebsites.net/**
