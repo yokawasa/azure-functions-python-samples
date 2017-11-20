@@ -34,6 +34,7 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 ## Documents
 * [Create a first Python Function in the Azure portal](docs/create-function-app-in-azure-portal.md)
 * [How to change the Python version being used in a Function App](docs/custom-python-version.md)
+* [Hands-on Contents](handson)
 
 ## Tips
 
