@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "documentDB",
+      "name": "outputDocument",
+      "databaseName": "mydb",
+      "collectionName": "rssfeeds",
+      "createIfNotExists": true,
+      "connection": "DOCUMENTDB_CONNECTIOJN",
+      "direction": "out"
+    },
+    {
+      "type": "queueTrigger",
+      "name": "inputMessage",
+      "queueName": "rssfeedqueue",
+      "connection": "STORAGE_CONNECTION",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
