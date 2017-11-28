@@ -77,7 +77,7 @@ Azureポータルまたはコマンドでデプロイ
 
 ## 6. Functionのテスト
 
-HTTP POSTリクエストを送信してRSSフィードURLが最終的に指定のキューに入ることを確認する. RSSフィード送信用パラメータfeedurlにRSSフィードURLを指定する
+HTTP POSTリクエストを送信してRSSフィードURLが最終的に指定のキューに入ることを確認する. RSSフィード送信用パラメータfeedurlにRSSフィードURLを指定する
 
 POSTリクエスト送信例:
 ```
