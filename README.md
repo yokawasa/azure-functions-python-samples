@@ -15,6 +15,10 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 # >>>2017-07-01T05:33:36.202 Python Version = '2.7.8'
 ```
 
+For those who want to change the Python runtime version to 3.5/3.6, here is a procedure: 
+[How to change the Python version being used in a Function App](docs/custom-python-version.md)
+
+
 ## Samples
 
 | Sample | Description | Trigger | In/Out Bindings | Python Ver
