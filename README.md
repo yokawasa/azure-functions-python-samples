@@ -38,6 +38,7 @@ For those who want to change the Python runtime version to 3.5/3.6, here is a pr
 ## Documents
 * [Create a first Python Function in the Azure portal](docs/create-function-app-in-azure-portal.md)
 * [How to change the Python version being used in a Function App](docs/custom-python-version.md)
+* [How to install the Python modules](docs/install-python-modules.md)
 
 ## Hands-on
 * [Hands-on Contents](handson)
