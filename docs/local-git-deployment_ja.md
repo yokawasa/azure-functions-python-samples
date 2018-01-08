@@ -10,7 +10,7 @@ $ git init
 ```
 
 ## 2: ローカルレポジトリにソースコードをコミット
-"mypyfunc"という名前のfunctionを作成する。ローカルレポジトリルート配下に"mypyfunc"ディレクトリを作成して、その配下にrun.py、function.json、その他関連ファイルを配置して全てのファイルをコミットする
+"mypyfunc"という名前のfunctionを作成する。ローカルレポジトリルート配下に"mypyfunc"ディレクトリを作成して、 その配下にrun.py、 function.json、その他関連ファイルを配置して全てのファイルをコミットする
 
 ```
 $ cd LOCAL_GIT_REPO_DIR
@@ -23,12 +23,12 @@ $ git commit -m "Added mypyfunc"
 ```
 
 ## 3: App Service アプリのリポジトリを有効にする
- [手順 3: App Service アプリのリポジトリを有効にする](https://docs.microsoft.com/ja-jp/azure/app-service/app-service-deploy-local-git#span-data-ttu-idd68c5-131a-namestep3a手順-3-app-service-アプリのリポジトリを有効にするspanspan-classsxs-lookupspan-data-stu-idd68c5-131a-namestep3astep-3-enable-the-app-service-app-repositoryspanspan)を参考にFunction Appに対して Git リポジトリを有効にする
+[手順 3: App Service アプリのリポジトリを有効にする](https://docs.microsoft.com/ja-jp/azure/app-service/app-service-deploy-local-git#span-data-ttu-idd68c5-131a-namestep3a手順-3-app-service-アプリのリポジトリを有効にするspanspan-classsxs-lookupspan-data-stu-idd68c5-131a-namestep3astep-3-enable-the-app-service-app-repositoryspanspan)を参考にFunction Appに対して Git リポジトリを有効にする
 
 
 ## 4: プロジェクトをデプロイする
 
-ポータルのFunction Appの[設定]、[プロパティ] の順にクリックし、[Git URL (Git の URL)] を確認
+ポータルのFunction Appの[設定]、[プロパティ] の順にクリックし、[Git URL (Git の URL)] を確認
 ```
  Git URL例: https://yoichika@yoichikademo27.scm.azurewebsites.net:443/yoichikademo27.git
 ```

@@ -39,6 +39,7 @@ For those who want to change the Python runtime version to 3.5/3.6, here is a pr
 * [Create a first Python Function in the Azure portal](docs/create-function-app-in-azure-portal.md)
 * [How to change the Python version being used in a Function App](docs/custom-python-version.md)
 * [How to install the Python modules](docs/install-python-modules.md)
+* [Local Git Deployment to Azure Functions (Japanese only)](docs/local-git-deployment_ja.md)
 
 ## Hands-on
 * [Hands-on Contents](handson)
@@ -47,6 +48,7 @@ For those who want to change the Python runtime version to 3.5/3.6, here is a pr
 ## Tips
 
 * [Running Python Code on Azure Functions App](https://prmadi.com/running-python-code-on-azure-functions-app/)
+* [Zip push deployment for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push)
 * [Work with Azure Functions Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies)
 * [Create a function triggered by Azure Blob storage](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-storage-blob-triggered-function)
 * [Create a function triggered by Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-cosmos-db-triggered-function)
