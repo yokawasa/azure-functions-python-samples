@@ -10,7 +10,7 @@ $ git init
 ```
 
 ## 2: ローカルレポジトリにソースコードをコミット
-"mypyfunc"という名前のfunctionを作成する。ローカルレポジトリルート配下に"mypyfunc"ディレクトリを作成して、 その配下にrun.py、 function.json、その他関連ファイルを配置して全てのファイルをコミットする
+"mypyfunc"という名前のfunctionを作成する。ローカルレポジトリルート配下に"mypyfunc"ディレクトリを作成して、その配下にrun.py、 function.json、その他関連ファイルを配置して全てのファイルをコミットする
 
 ```
 $ cd LOCAL_GIT_REPO_DIR
