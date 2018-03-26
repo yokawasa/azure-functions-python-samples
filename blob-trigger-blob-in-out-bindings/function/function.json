@@ -4,23 +4,23 @@
       "name": "blobTriggerTest",
       "type": "blobTrigger",
       "direction": "in",
-      "path": "inputcontainer4funcs",
+      "path": "inputcontainer4funcs/{blobname}.{blobextension}",
       "connection": "yourstorageaccount_STORAGE"
     },
     {
       "type": "blob",
       "name": "inputBlob",
-      "path": "inputcontainer4funcs/clear.txt",
+      "path": "inputcontainer4funcs/{blobname}.{blobextension}",
       "direction": "in",
       "connection": "yourstorageaccount_STORAGE"
     },
     {
       "type": "blob",
       "name": "outputBlob",
-      "path": "outputcontainer4funcs/encrypted.txt",
+      "path": "outputcontainer4funcs/{blobname}-encoded.{blobextension}",
       "direction": "out",
       "connection": "yourstorageaccount_STORAGE"
     }
   ],
-  "disabled": true
+  "disabled": false
 }
