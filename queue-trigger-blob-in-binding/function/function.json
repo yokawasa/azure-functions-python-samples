@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "inputMessage",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "myqueue4python",
+      "connection": "yourstorageaccount_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "inputBlob",
+      "path": "inputcontainer4funcs/{queueTrigger}",
+      "connection": "yourstorageaccount_STORAGE",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}

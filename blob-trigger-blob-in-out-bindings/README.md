@@ -55,7 +55,9 @@ Here is how the functions works when you upload a blob file named `sample.txt`
 3. Encrypt the content in clear_text variable using ROT13 encyrption and assign the encrypted content into encrypted_text variable
 4. Store the encrypted content into a file named `{blobname}-encoded.{blobextension}` in a container named `outputcontainer4funcs`
 
-[NOTE] You can not get the blob name in the Blob Trigger function. Use another mechanism to trigger the blob processing, such as a queue message that contains the blob name. See the blob input bindings example in [this page](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob#input---example)
+[NOTE] You can NOT get the blob name in the Blob Trigger function. Use another mechanism to trigger the blob processing, such as a queue message that contains the blob name. See the blob input bindings example in [this page](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob#input---example) for more detail. 
+
+Seel Also a sample where you can get the blob file name using queue trigger - [queue-trigger-blob-in-bindings](../queue-trigger-blob-in-binding/)
 
 
 ## LINKS
