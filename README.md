@@ -24,7 +24,8 @@ For those who want to change the Python runtime version to 3.5/3.6, here is a pr
 | Sample | Description | Trigger | In/Out Bindings | Python Ver
 | ------------- | ------------- | ------------- | ----------- | ----------- |
 | [cosmosdb-trigger-cosmosdb-in-binding](cosmosdb-trigger-cosmosdb-in-binding) | Azure Functions CosmosDB Trigger Python Sample. The function simply read & dump documets which are added to or changed in Azure Cosmos DB by leveraging CosmosDB input binding | CosmosDB | in:DocumentDB | 2.7 |
-| [blob-trigger-blob-in-out-bindings](blob-trigger-blob-in-out-bindings) | Azure Functions Blob Trigger Python Sample that simply read file from Azure Blob Storage and write an output file to Azure Blob Storage using Blob Storage input and output bindings respectively | Blob | in:Blob, out:Blob | 2.7 |
+| [blob-trigger-blob-in-out-bindings](blob-trigger-blob-in-out-bindings) | Azure Functions Blob Trigger Python Sample that simply read file from Azure Blob Storage and write an output file to Azure Blob Storage using Blob Storage input and output bindings respectively | Blob | in:Blob, out:Blob | 2.7, 3.X |
+| [queue-trigger-blob-in-bindings](queue-trigger-blob-in-binding) | Azure Functions Queue Trigger Python Sample that obtain a blog file name from Queue as a queue message and read a file named the blog file name in Azure Blob Storage using Blob Input Binding| Queue | in:Blob | 2.7, 3.X |
 | [queue-trigger-rssfeed-crawler](queue-trigger-rssfeed-crawler) | Azure Functions Queue Trigger Python Sample that get RSS feed URL from Queue and dump all items that obtained from RSS feed| Queue | NONE | 2.7 |
 | [queue-trigger-tagging-images](queue-trigger-tagging-images) | Azure Functions Queue Trigger Python Sample that tags images stored on Azure Blob Storage by using Cognitive Vision API | Queue | NONE | 2.7 |
 | [queue-trigger-sendgrid](queue-trigger-sendgrid) | Azure Functions Queue Trigger Python Sample that send email by using SendGrid bindings | Queue | out:SendGrid | 2.7 |
@@ -32,7 +33,7 @@ For those who want to change the Python runtime version to 3.5/3.6, here is a pr
 | [http-trigger-dump-request](http-trigger-dump-request) | Azure Functions HTTP Trigger Python Sample that get and dump HTTPS request info that the trigger receives | HTTP | out:HTTP | 2.7 |
 | [blob-sas-token-generator](blob-sas-token-generator)  | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | HTTP | out:HTTP | 2.7 |
 | [timer-trigger-azuresearch-index-monitoring](timer-trigger-azuresearch-index-monitoring) | Azure Functions Timer Trigger Python Sample that get Azure Search index statistics via API and store the results into DocumentDB | Timer | out:DocumentDB | 2.7 |
-| [eventhub-trigger-table-out-bindings](eventhub-trigger-table-out-bindings) | Azure Functions EventHub Trigger Python Sample that read message (device info) in EventHub that sent from sender and write an output record to Azure Table Storage using Table bindings | EventHub | out:Table | 2.7 |
+| [eventhub-trigger-table-out-bindings](eventhub-trigger-table-out-bindings) | Azure Functions EventHub Trigger Python Sample that read message (device info) in EventHub that sent from sender and write an output record to Azure Table Storage using Table bindings | EventHub | out:Table | 2.7, 3.X |
 | [proxies-simple-condition-matches](proxies-simple-condition-matches) | Azure Functions Python Sample that re-write dynamic and static page url using Azure Functions Proxies | HTTP | out:HTTP | 2.7 |
 
 ## Documents
