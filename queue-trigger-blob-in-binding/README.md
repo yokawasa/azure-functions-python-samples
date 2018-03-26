@@ -1,5 +1,5 @@
 # queue-trigger-blob-in-binding
-zure Functions Queue Trigger Python Sample that obtain a blog file name from Queue as a queue message and read a file named the blog file name in Azure Blob Storage using Blob Input Binding| Queue
+Azure Functions Queue Trigger Python Sample that obtain a blog file name from Queue as a queue message and read a file named the blog file name in Azure Blob Storage using Blob Input Binding| Queue
 
 ## Prerequisites
 - Azure Functions Account
