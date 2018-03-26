@@ -50,10 +50,10 @@ You can specify an exact file name, for example, `clear.txt if you want Blob tri
 ## How the function works?
 
 Here is how the functions works when you upload a blob file named `sample.txt`
-1. It is triggered to start the function when a new or updated blob is detected in a container named `inputcontainer4funcs`
-2. Read the detected blob file using Blob storage input binding, and assign the content into clear_text variable
-3. Encrypt the content in clear_text variable using ROT13 encyrption and assign the encrypted content into encrypted_text variable
-4. Store the encrypted content into a file named `{blobname}-encoded.{blobextension}` in a container named `outputcontainer4funcs`
+1. The function is triggered to start when a new or updated blob is detected in a container named `inputcontainer4funcs`
+2. The function reads the detected blob file using Blob storage input binding, and assigns the content into clear_text variable
+3. The function encrypts the content in clear_text variable using ROT13 encyrption and assign the encrypted content into encrypted_text variable
+4. The function stores the encrypted content into a file named `{blobname}-encoded.{blobextension}` in a container named `outputcontainer4funcs`
 
 [NOTE] You can NOT get the blob name in the Blob Trigger function. Use another mechanism to trigger the blob processing, such as a queue message that contains the blob name. See the blob input bindings example in [this page](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob#input---example) for more detail. 
 
