@@ -42,5 +42,5 @@ outdoc= {
 }
 # Writing to Azure Table Storage (Table parameter name: outputTable)
 print('Writing data to Azure Table:', outdoc)
-with open(os.environ['outputTable'], 'wb') as f:
+with open(os.environ['outputTable'], 'w') as f:
     json.dump(outdoc,f)
