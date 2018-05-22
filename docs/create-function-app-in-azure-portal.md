@@ -9,12 +9,19 @@ Create a Function App in the Azure portal by following an article - [Create your
 1. Expand your new function app, then click the + button next to Functions.
 
 2. In the Get started quickly page, click **Create your own custom function**
-![](../img/first-function-1.png)
+  ![](../img/first-function-1.png)
 
-3. Then, select **Python** in pull down menu for Language.
-![](../img/first-function-2.png)
- Select "HttpTrigger - Python" template, typein **myfunc01** for Name your function text box, choose **Function** for Authentication Level, and press Create button.
-![](../img/first-function-3.png)
+3. Then, you can see below 
+  ![](https://ws4.sinaimg.cn/large/006tNc79gy1frkbafcgbkj31kw0z611r.jpg)
+
+4. you can find `Experimental Language Support` button and `Disabled` Button then, should make it `Enabled` Button
+
+  ![](https://ws1.sinaimg.cn/large/006tNc79gy1frkbcl737hj31kw14sqdd.jpg)
+
+5. Finally, you are able to find Python Language.  
+  Select "HttpTrigger - Python" template, typein **myfunc01** for Name your function text box, choose **Function** for Authentication Level, and press Create button.
+
+![](https://ws4.sinaimg.cn/large/006tNc79gy1frkbeqd6h8j31is1c0aiq.jpg)
 
 ### Test the function
 1. In your new function, click **</> Get function URL** 
