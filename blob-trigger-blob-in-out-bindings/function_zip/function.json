@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "blobTriggerTest",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "inputcontainer4funcs/{blobname}.zip",
+      "connection": "yourstorageaccount_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "inputBlob",
+      "path": "inputcontainer4funcs/{blobname}.zip",
+      "direction": "in",
+      "connection": "yourstorageaccount_STORAGE"
+    }
+  ],
+  "disabled": false
+}
