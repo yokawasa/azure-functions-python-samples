@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "name": "blobTriggerTest",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "inputcontainer4funcs/{blobname}.txt",
+      "connection": "functionsstore01_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "inputBlob",
+      "path": "inputcontainer4funcs/{blobname}.txt",
+      "direction": "in",
+      "connection": "functionsstore01_STORAGE"
+    },
+    {
+      "type": "blob",
+      "name": "outputBlob",
+      "path": "outputcontainer4funcs/{blobname}-encrypted.txt",
+      "direction": "out",
+      "connection": "functionsstore01_STORAGE"
+    }
+  ],
+  "disabled": false
+}
