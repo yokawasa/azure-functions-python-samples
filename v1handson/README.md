@@ -1,4 +1,4 @@
-# Hands-on: Serverless Application Development with Python
+# Hands-on: Serverless Application Development with Python (V1 Functions)
 
 | section | Description | link
 | ------------- | ------------- | ------------- | 
