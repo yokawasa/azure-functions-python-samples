@@ -5,12 +5,13 @@ Azure Functions Python Sample Codes
 
 Table of Contents
 - [azure-functions-python-samples](#azure-functions-python-samples)
-    - [V2 Functions (Public Preview)](#v2-functions-public-preview)
-        - [V2 Functions Samples](#v2-functions-samples)
-    - [V1 Functions (Experimental)](#v1-functions-experimental)
-        - [V1 Functions Samples](#v1-functions-samples)
-        - [V1 Documents](#v1-documents)
-    - [Contributing](#contributing)
+  - [V2 Functions (Public Preview)](#v2-functions-public-preview)
+    - [V2 Functions Samples](#v2-functions-samples)
+    - [Documents](#documents)
+  - [V1 Functions (Experimental)](#v1-functions-experimental)
+    - [V1 Functions Samples](#v1-functions-samples)
+    - [Documents (Deprecating)](#documents-deprecating)
+  - [Contributing](#contributing)
 
 
 ## V2 Functions (Public Preview)
@@ -20,6 +21,12 @@ Table of Contents
 | ------------- | ------------- | ------------- | ----------- | ----------- |
 | [cosmosdb-trigger-cosmosdb-in-binding](v2functions/blob-trigger-cosmosdb-out-binding) | Azure Functions Blob Storage Trigger Python Sample. The function gets image data from Azure Blob Trigger, gets tags for the image with [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) ([Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)), and store the tags into Azure Cosmos DB by leveraging CosmosDB output binding | Blob Storage | NONE | CosmosDB |
 
+### Documents
+* [Quickstart V2 Python Functions](docs/quickstart-v2-python-functions.md)
+* [Zip push deployment for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push)
+* [Work with Azure Functions Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies)
+* [Create a function triggered by Azure Blob storage](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-storage-blob-triggered-function)
+* [Create a function triggered by Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-cosmos-db-triggered-function)
 
 ---
 ## V1 Functions (Experimental)
@@ -48,18 +55,11 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 | [eventhub-trigger-table-out-bindings](v1functions/eventhub-trigger-table-out-bindings) | Azure Functions EventHub Trigger Python Sample that read message (device info) in EventHub that sent from sender and write an output record to Azure Table Storage using Table bindings | EventHub | NONE | Table Storage|
 | [proxies-simple-condition-matches](v1functions/proxies-simple-condition-matches) | Azure Functions Python Sample that re-write dynamic and static page url using Azure Functions Proxies | HTTP | NONE | HTTP |
 
-### V1 Documents
-* [V1: Create a first Python Function in the Azure portal](docs/create-function-app-in-azure-portal.md)
+### Documents (Deprecating)
 * [V1: How to change the Python version being used in a Function App](docs/custom-python-version.md)
 * [V1: How to install the Python modules](docs/install-python-modules.md)
 * [V1: Local Git Deployment to Azure Functions (Japanese only)](docs/local-git-deployment_ja.md)
-* [V1: Running Python Code on Azure Functions App](https://prmadi.com/running-python-code-on-azure-functions-app/)
-* [V1: Zip push deployment for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push)
-* [V1: Work with Azure Functions Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies)
-* [V1: Create a function triggered by Azure Blob storage](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-storage-blob-triggered-function)
-* [V1: Create a function triggered by Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-cosmos-db-triggered-function)
 
 
 ## Contributing
-
 Bug reports and pull requests are welcome on GitHub at https://github.com/yokawasa/azure-functions-python-samples
