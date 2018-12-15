@@ -1,10 +1,10 @@
 import logging
-
+import os
 import azure.functions as func
 import http.client, urllib.parse, base64, json
 import requests
 
-subscription_key = '<Computer Vision API Subscription Key>'
+subscription_key = os.environ['ComputerVisionSubscription']
 
 headers = {
     # Request headers.

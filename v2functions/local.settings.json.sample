@@ -3,6 +3,7 @@
   "Values": {
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "AzureWebJobsCosmosDBConnectionString": "AccountEndpoint=https://testcosmos01.documents.azure.com:443/;AccountKey=XCU5aM6eTnnlJ9TE4dQJsLML2RIMBYe5jFGEdpRLLvdcr3YLbQ17s4ZOEQjxqU6qGVTfd37PeZKKD0YEXIJ08g==;"
+    "AzureWebJobsCosmosDBConnectionString": "AccountEndpoint=https://testcosmos01.documents.azure.com:443/;AccountKey=XCU5aM6eTnnlJ9TE4dQJsLML2RIMBYe5jFGEdpRLLvdcr3YLbQ17s4ZOEQjxqU6qGVTfd37PeZKKD0YEXIJ08g==;",
+    "ComputerVisionSubscription": "aatest72a28e47cd9ce2f984c0ee8sse"
   }
 }
