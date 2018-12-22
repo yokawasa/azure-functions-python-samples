@@ -79,9 +79,10 @@ az cosmosdb collection create \
 # Create a container for leaves
 # 'leaves' need to be a single collection partition
 # Please see also: https://github.com/Azure/azure-functions-core-tools/issues/930
+LEASES_COLLECTION_NAME="leases"
 az cosmosdb collection create \
     --resource-group $RESOURCE_GROUP \
-    --collection-name $LEAVES_COLLECTION_NAME \
+    --collection-name $LEASES_COLLECTION_NAME \
     --name $COSMOSDB_ACCOUNT_NAME \
     --db-name $DATABASE_NAME \
     --throughput 400

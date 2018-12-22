@@ -2,7 +2,7 @@
 
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
-| [cosmosdb-trigger-cosmosdb-in-binding](v2functions/blob-trigger-cosmosdb-out-binding) | Azure Functions Blob Storage Trigger Python Sample. The function gets image data from Azure Blob Trigger, gets tags for the image with [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) ([Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)), and store the tags into Azure Cosmos DB by leveraging CosmosDB output binding | Blob Storage | NONE | CosmosDB |
+| `cosmosdb-trigger-cosmosdb-in-binding` | Azure Functions Blob Storage Trigger Python Sample. The function gets image data from Azure Blob Trigger, gets tags for the image with [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) ([Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)), and store the tags into Azure Cosmos DB by leveraging CosmosDB output binding | Blob Storage | NONE | CosmosDB |
 
 ## Configurations
 As specified in `functions.json`, you need Azure Storage account for triggering functions and Cosmos DB Account to store data using Cosmos DB output binding
@@ -96,10 +96,10 @@ az cosmosdb collection create \
 # Create a container for leaves
 # 'leaves' need to be a single collection partition
 # Please see also: https://github.com/Azure/azure-functions-core-tools/issues/930
-LEAVES_COLLECTION_NAME="leaves"
+LEASES_COLLECTION_NAME="leases"
 az cosmosdb collection create \
     --resource-group $RESOURCE_GROUP \
-    --collection-name $LEAVES_COLLECTION_NAME \
+    --collection-name $LEASES_COLLECTION_NAME \
     --name $COSMOSDB_ACCOUNT_NAME \
     --db-name $DATABASE_NAME \
     --throughput 400
