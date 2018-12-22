@@ -5,7 +5,7 @@ COSMOSDB_ACCOUNT_NAME="azfuncv2db"
 RESOURCE_GROUP="RG-azfuncv2"
 DATABASE_NAME="testdb"
 CREATE_LEASE_COLLECTION=1         # yes,no=(1,0)
-LEAVES_COLLECTION_NAME="leases"
+LEASES_COLLECTION_NAME="leases"
 
 az cosmosdb create \
     --name $COSMOSDB_ACCOUNT_NAME \
@@ -47,7 +47,7 @@ if [ $CREATE_LEASE_COLLECTION -gt 0 ]
 then
   az cosmosdb collection create \
     --resource-group $RESOURCE_GROUP \
-    --collection-name $LEAVES_COLLECTION_NAME \
+    --collection-name $LEASES_COLLECTION_NAME \
     --name $COSMOSDB_ACCOUNT_NAME \
     --db-name $DATABASE_NAME \
     --throughput 400
