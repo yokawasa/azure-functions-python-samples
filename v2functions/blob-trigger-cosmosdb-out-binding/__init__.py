@@ -18,7 +18,6 @@ params = urllib.parse.urlencode({
     'language': 'en',
 })
 
-#def main(myblob: func.InputStream):
 def main(myblob: func.InputStream, doc: func.Out[func.Document]):
     logging.info(f"Python blob trigger function processed blob \n"
                  f"Name: {myblob.name}\n"
@@ -36,11 +35,14 @@ def main(myblob: func.InputStream, doc: func.Out[func.Document]):
         logging.info("Response:")
         logging.info(json.dumps(parsed, sort_keys=True, indent=2))
 
-        # Set CosmosDB
+        # Set output data
         outdata = {}
-        outdata['image'] = myblob.name
-        outdata['tags'] = parsed['description']['tags']
+        outdata['name'] = myblob.name
+        taglist = parsed['description']['tags']
+        outdata['text'] =  ' '.join(taglist)
         logging.info(json.dumps(outdata, sort_keys=True, indent=2))
+
+        ## Store output data using Cosmos DB output binding
         doc.set(func.Document.from_json(json.dumps(outdata)))
     except Exception as e:
         print('Error:')

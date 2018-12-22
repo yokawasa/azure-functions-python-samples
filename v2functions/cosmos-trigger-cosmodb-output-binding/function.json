@@ -2,18 +2,21 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "name": "myblob",
-      "type": "blobTrigger",
+      "type": "cosmosDBTrigger",
+      "name": "documents",
       "direction": "in",
-      "path": "upload-images/{name}",
-      "connection": "AzureWebJobsStorage"
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "databaseName": "testdb",
+      "collectionName": "testcol01",
+      "createLeaseCollectionIfNotExists": true
     },
     {
       "direction": "out",
       "type": "cosmosDB",
-      "name": "doc",
+      "name": "outdoc",
       "databaseName": "testdb",
-      "collectionName": "testcol01",
+      "collectionName": "testcol02",
       "leaseCollectionName": "leases",
       "createLeaseCollectionIfNotExists": true,
       "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
