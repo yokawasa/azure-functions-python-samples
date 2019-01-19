@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ ! -d ${AZURITE_DIR} ]
+then
+  mkdir -p ${AZURITE_DIR}
+fi
+
+azurite -l ${AZURITE_DIR}

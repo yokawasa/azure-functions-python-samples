@@ -1,0 +1,19 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ $# -ne 2 ]
+then
+  echo "$0 [container] [file]"
+  exit
+fi
+
+CONTAINER=$1
+LOCAL_FILE=$2
+FILE_NAME=$(basename $LOCAL_FILE)
+echo "storage container: $CONTAINER"
+echo "blob name: $BLOB_NAME"
+
+az storage blob upload --container-name $CONTAINER --name $FILE_NAME --file $LOCAL_FILE --connection-string $STORAGE_CONNECTION_STRING

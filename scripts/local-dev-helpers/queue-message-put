@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ $# -ne 2 ]
+then
+  echo "$0 [queuename] [content]"
+  exit
+fi
+
+QUEUE_NAME=$1
+CONTENT=$2
+echo "queue name: $QUEUE_NAME"
+echo "queue content: $CONTENT"
+
+az storage message put --queue-name $QUEUE_NAME --content $CONTENT --connection-string $STORAGE_CONNECTION_STRING

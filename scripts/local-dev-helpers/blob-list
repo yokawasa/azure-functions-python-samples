@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ $# -ne 1 ]
+then
+  echo "$0 [container]"
+  exit
+fi
+
+CONTAINER=$1
+echo "storage container: $CONTAINER"
+
+# List blobs in the container
+az storage blob list --container-name $CONTAINER --output table --connection-string $STORAGE_CONNECTION_STRING
+

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ $# -ne 2 ]
+then
+  echo "$0 [container] [blobname]"
+  exit
+fi
+
+CONTAINER=$1
+BLOB_NAME=$2
+echo "storage container: $CONTAINER"
+echo "blob name: $BLOB_NAME"
+
+az storage blob delete -c $CONTAINER -n $BLOB_NAME --connection-string $STORAGE_CONNECTION_STRING

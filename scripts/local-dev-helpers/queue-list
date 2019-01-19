@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+az storage queue list --connection-string $STORAGE_CONNECTION_STRING

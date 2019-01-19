@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ $# -ne 1 ]
+then
+  echo "$0 [container]"
+  exit
+fi
+
+CONTAINER=$1
+echo "storage container: $CONTAINER"
+
+az storage container create --name $CONTAINER --connection-string $STORAGE_CONNECTION_STRING

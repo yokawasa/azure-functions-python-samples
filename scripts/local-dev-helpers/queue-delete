@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cwd=`dirname "$0"`
+expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
+. $cwd/env.conf
+
+if [ $# -ne 1 ]
+then
+  echo "$0 [queuename]"
+  exit
+fi
+
+QUEUE_NAME=$1
+echo "queue name: $QUEUE_NAME"
+
+az storage queue delete --name $QUEUE_NAME --connection-string $STORAGE_CONNECTION_STRING
