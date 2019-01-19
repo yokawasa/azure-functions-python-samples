@@ -4,7 +4,7 @@
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "MyCosmosDBConnectionString": "<CosmosDB Connection String>",
-    "ComputerVisionSubscription": "<Azure Computer Vision API SubscriptionKey>"
+    "ComputerVisionSubscription": "<Azure Computer Vision API SubscriptionKey>",
     "MyStorageConnectionString": "<Storage Connection String>"
   }
 }
