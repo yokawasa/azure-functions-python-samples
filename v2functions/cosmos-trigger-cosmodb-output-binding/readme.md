@@ -12,21 +12,24 @@ As specified in `functions.json`, you need Azure Cosmos DB account for triggerin
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "name": "myblob",
-      "type": "blobTrigger",
+      "type": "cosmosDBTrigger",
+      "name": "documents",
       "direction": "in",
-      "path": "upload-images/{name}",
-      "connection": "AzureWebJobsStorage"
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "MyCosmosDBConnectionString",
+      "databaseName": "testdb",
+      "collectionName": "testcol01",
+      "createLeaseCollectionIfNotExists": true
     },
     {
       "direction": "out",
       "type": "cosmosDB",
-      "name": "doc",
+      "name": "outdoc",
       "databaseName": "testdb",
-      "collectionName": "testcol01",
+      "collectionName": "testcol02",
       "leaseCollectionName": "leases",
       "createLeaseCollectionIfNotExists": true,
-      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "connectionStringSetting": "MyCosmosDBConnectionString",
       "createIfNotExists": true
     }
   ]
@@ -104,12 +107,10 @@ func azure functionapp publish $FUNCTION_APP_NAME --build-native-deps --no-bundl
 
 Add Functions App Settings
 ```sh
-FUNCTION_STORAGE_CONNECTION="*************"
 COSMOS_DB_CONNECTION="***************"
 az webapp config appsettings set \
   -n $FUNCTION_APP_NAME \
   -g $RESOURCE_GROUP \
   --settings \
-    AzureWebJobsStorage=$FUNCTION_STORAGE_CONNECTION \
-    AzureWebJobsCosmosDBConnectionString=$COSMOS_DB_CONNECTION
+    MyCosmosDBConnectionString=$COSMOS_DB_CONNECTION
 ```

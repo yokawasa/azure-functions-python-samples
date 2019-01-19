@@ -6,7 +6,7 @@
       "type": "blobTrigger",
       "direction": "in",
       "path": "upload-images/{name}",
-      "connection": "AzureWebJobsStorage"
+      "connection": "MyStorageConnectionString"
     },
     {
       "direction": "out",
@@ -16,7 +16,7 @@
       "collectionName": "testcol01",
       "leaseCollectionName": "leases",
       "createLeaseCollectionIfNotExists": true,
-      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "connectionStringSetting": "MyCosmosDBConnectionString",
       "createIfNotExists": true
     }
   ]

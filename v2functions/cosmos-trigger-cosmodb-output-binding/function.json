@@ -6,7 +6,7 @@
       "name": "documents",
       "direction": "in",
       "leaseCollectionName": "leases",
-      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "connectionStringSetting": "MyCosmosDBConnectionString",
       "databaseName": "testdb",
       "collectionName": "testcol01",
       "createLeaseCollectionIfNotExists": true
@@ -19,7 +19,7 @@
       "collectionName": "testcol02",
       "leaseCollectionName": "leases",
       "createLeaseCollectionIfNotExists": true,
-      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "connectionStringSetting": "MyCosmosDBConnectionString",
       "createIfNotExists": true
     }
   ]

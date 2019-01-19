@@ -1,0 +1,1 @@
+az webapp config appsettings set -n yoichikaazfuncv2linux001 -g RG-azfuncv2 --settings a=a 

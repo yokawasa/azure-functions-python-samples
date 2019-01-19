@@ -16,7 +16,7 @@ As specified in `functions.json`, you need Azure Storage account for triggering 
       "type": "blobTrigger",
       "direction": "in",
       "path": "upload-images/{name}",
-      "connection": "AzureWebJobsStorage"
+      "connection": "MyStorageConnectionString"
     },
     {
       "direction": "out",
@@ -26,7 +26,7 @@ As specified in `functions.json`, you need Azure Storage account for triggering 
       "collectionName": "testcol01",
       "leaseCollectionName": "leases",
       "createLeaseCollectionIfNotExists": true,
-      "connectionStringSetting": "AzureWebJobsCosmosDBConnectionString",
+      "connectionStringSetting": "MyCosmosDBConnectionString",
       "createIfNotExists": true
     }
   ]
@@ -127,6 +127,6 @@ az webapp config appsettings set \
   -n $FUNCTION_APP_NAME \
   -g $RESOURCE_GROUP \
   --settings \
-    AzureWebJobsStorage=$FUNCTION_STORAGE_CONNECTION \
-    AzureWebJobsCosmosDBConnectionString=$COSMOS_DB_CONNECTION
+    MyStorageConnectionString=$FUNCTION_STORAGE_CONNECTION \
+    MyCosmosDBConnectionString=$COSMOS_DB_CONNECTION
 ```

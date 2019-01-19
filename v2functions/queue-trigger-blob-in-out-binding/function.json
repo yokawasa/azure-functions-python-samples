@@ -1,0 +1,26 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myitem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "itemsqueue",
+      "connection": "MyStorageConnectionString"
+    },
+    {
+      "name": "inputblob",
+      "type": "blob",
+      "path": "inputitems/{queueTrigger}",
+      "connection": "MyStorageConnectionString",
+      "direction": "in"
+    },
+    {
+      "name": "outputblob",
+      "type": "blob",
+      "direction": "out",
+      "connection": "MyStorageConnectionString",
+      "path": "outputitems/{queueTrigger}"
+    }
+  ]
+}
