@@ -3,7 +3,7 @@
   "bindings": [
     {
       "type": "cosmosDBTrigger",
-      "name": "documents",
+      "name": "docs",
       "direction": "in",
       "leaseCollectionName": "leases",
       "connectionStringSetting": "MyCosmosDBConnectionString",

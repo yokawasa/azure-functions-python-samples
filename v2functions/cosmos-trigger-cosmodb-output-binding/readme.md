@@ -13,7 +13,7 @@ As specified in `functions.json`, you need Azure Cosmos DB account for triggerin
   "bindings": [
     {
       "type": "cosmosDBTrigger",
-      "name": "documents",
+      "name": "docs",
       "direction": "in",
       "leaseCollectionName": "leases",
       "connectionStringSetting": "MyCosmosDBConnectionString",
@@ -34,6 +34,7 @@ As specified in `functions.json`, you need Azure Cosmos DB account for triggerin
     }
   ]
 }
+
 ```
 ### Create Cosmos DB Account and DB & Collection for testing
 

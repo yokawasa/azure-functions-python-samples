@@ -13,19 +13,24 @@ def process_rot13(s):
     g = (_rot13(c) for c in s)
     return ''.join(g)
 
-def main(documents: func.DocumentList, outdoc: func.Out[func.Document]) -> str:
- 
-    for document in documents:
-        logging.info(document.to_json())
+def main(docs: func.DocumentList, outdoc: func.Out[func.Document]) -> str:
+
+    newdocs = func.DocumentList() 
+    for doc in docs:
+        logging.info(doc.to_json())
 
         ## Process Something
-        clear_text = document["text"]
+        clear_text = doc["text"]
         encrypted_text= process_rot13(clear_text)        
 
-        ## Create output data
-        newdocument = {
-            "name": document["name"],
+        ## Create a new doc (type:Dict)
+        newdoc_dict = {
+            "name": doc["name"],
             "text": encrypted_text 
         }
-        ## Store output data using Cosmos DB output binding
-        outdoc.set(func.Document.from_json(json.dumps(newdocument)))
+
+        ## Append the new doc to DocumentList for output
+        newdocs.append(func.Document.from_dict(newdoc_dict))
+ 
+    ## Set the DocumentList to outdoc to store into CosmosDB using CosmosDB output binding
+    outdoc.set(newdocs)
