@@ -23,6 +23,7 @@ Table of Contents
 | [cosmos-trigger-cosmodb-output-binding](v2functions/cosmos-trigger-cosmodb-output-binding) | Azure Functions Cosmos DB Trigger Python Sample. The function gets document data from Azure Cosmos DB Trigger, ROT13 encodes obtained clear text, and store encoded data into Azure Cosmos DB by using Cosmos DB output binding | CosmosDB | NONE | CosmosDB |
 | [queue-trigger-blob-in-out-binding](v2functions/queue-trigger-blob-in-out-binding) | Azure Functions Queue Trigger Python Sample. The function gets a file name from queue message, reads a blob file named the file name using Blob Input Binding, then ROT13 encodes the obtained clear text, and finally stores it into Azure Blob Storage using Blob Output Binding  | Queue Storage | Blob Storage | Blob Storage |
 | [timer-trigger-cosmos-output-binding](v2functions/timer-trigger-cosmosdb-output-binding) | Azure Functions Timer Trigger Python Sample. The function gets blog RSS feed and store the results into CosmosDB using Cosmos DB output binding | Timer | NONE | CosmosDB |
+| [http-trigger-blob-sas-token](v2functions/http-trigger-blob-sas-token) | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | HTTP | NONE | HTTP |
 
 ### Documents
 * [Quickstart V2 Python Functions](docs/quickstart-v2-python-functions.md)
