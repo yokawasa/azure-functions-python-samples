@@ -112,7 +112,7 @@ curl -s\
     "permission": "rl",
     "container": "functiontest",
     "blobname": "sample.png",
-    "ttl": 2
+    "ttl": 1
 }'
 ```
 
@@ -120,9 +120,8 @@ Replace `api_url` and `api_key` with your values in the script and execute it. Y
 
 ```json
 {
-    "status": 200,
-    "body": "{\"token\": \"sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-29T14%3A50%3A46Z&st=2019-03-29T12%3A45%3A46Z&spr=https&sig=%2FS7Z0qnrk3UvyeXZtb4ZbqjTCORnRqkEE3e1O6Gb1KA%3D\", \"url\": \"https://MyFunctionApp.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-29T14%3A50%3A46Z&st=2019-03-29T12%3A45%3A46Z&spr=https&sig=%2FS7Z0qnrk3UvyeXZtb4ZbqjTCORnRqkEE3e1O6Gb1KA%3D\"}",
-    "headers": {"Content-Type": "application/json"}
+    "token": "sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-31T05%3A17%3A11Z&st=2019-03-31T03%3A12%3A11Z&spr=https&sig=A99ZFhDK2fwHnYl5Nd1dm%2Bcd1xJbolHz5wZLG9ewOvs%3D",
+    "url": "https://azfuncv2linuxstore.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-31T05%3A17%3A11Z&st=2019-03-31T03%3A12%3A11Z&spr=https&sig=A99ZFhDK2fwHnYl5Nd1dm%2Bcd1xJbolHz5wZLG9ewOvs%3D"
 }
 ```
 

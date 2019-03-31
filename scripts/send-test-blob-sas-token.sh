@@ -11,6 +11,6 @@ curl -s\
     "permission": "rl",
     "container": "functiontest",
     "blobname": "sample.jpg",
-    "ttl": 2
+    "ttl": 1
 }'
 echo ""

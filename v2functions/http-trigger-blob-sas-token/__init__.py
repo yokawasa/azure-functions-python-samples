@@ -60,10 +60,11 @@ def write_http_response(status, body_dict):
             "Content-Type": "application/json"
         }
     }
-    return func.HttpResponse(
-            json.dumps(return_dict),
-            status_code=status
-        )
+    return json.dumps(return_dict)
+    #return func.HttpResponse(
+    #        json.dumps(return_dict),
+    #        status_code=status
+    #    )
 
 def generate_sas_token (storage_account, storage_key, permission, token_ttl, container_name, blob_name = None ):
     sp = permission
@@ -123,7 +124,7 @@ def generate_sas_token (storage_account, storage_key, permission, token_ttl, con
             'url' : sas_url
            }
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
+def main(req: func.HttpRequest) -> str:
     logging.info('Python HTTP trigger function processed a request.')
 
     # Get Azure Storage Connection String
