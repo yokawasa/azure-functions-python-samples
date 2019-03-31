@@ -1,10 +1,20 @@
-
 # http-trigger-blob-sas-token (Python)
+
+- [http-trigger-blob-sas-token (Python)](#http-trigger-blob-sas-token-python)
+  - [Configuration](#configuration)
+  - [How to develop and publish the function](#how-to-develop-and-publish-the-function)
+    - [Local development](#local-development)
+    - [Publish the function to the cloud](#publish-the-function-to-the-cloud)
+  - [API Format](#api-format)
+    - [HTTP Request body format](#http-request-body-format)
+    - [Response body format](#response-body-format)
+  - [Examples](#examples)
+    - [Get SAS Token to access blob files in Azure Blob Storage](#get-sas-token-to-access-blob-files-in-azure-blob-storage)
+    - [Uploading files to Azure Blob Storage](#uploading-files-to-azure-blob-storage)
 
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
 | `http-trigger-blob-sas-token` | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | HTTP | NONE | HTTP |
-
 
 ## Configuration
 
@@ -56,7 +66,7 @@ az webapp config appsettings set \
     MyStorageConnectionString=$FUNCTION_STORAGE_CONNECTION 
 ```
 
-## Sending Test Requests
+## API Format
 
 ### HTTP Request body format
 HTTP Request body must include the following parameters:
@@ -97,7 +107,8 @@ Sample Response Body
 {"token": "sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-29T14%3A02%3A37Z&st=2019-03-29T11%3A57%3A37Z&spr=https&sig=Sh7RAa5MZBk7gfv0haCbEbllFXoiOWJDK9itzPeqURE%3D", "url": "https://MyFunctionApp.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-29T14%3A02%3A37Z&st=2019-03-29T11%3A57%3A37Z&spr=https&sig=Sh7RAa5MZBk7gfv0haCbEbllFXoiOWJDK9itzPeqURE%3D" }
 ```
 
-### Sending requests with test command
+## Examples
+### Get SAS Token to access blob files in Azure Blob Storage
 
 There is a test request command - `scripts/send-test-blob-sas-token.sh`
 ```sh
@@ -121,12 +132,73 @@ Replace `api_url` and `api_key` with your values in the script and execute it. Y
 ```json
 {
     "token": "sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-31T05%3A17%3A11Z&st=2019-03-31T03%3A12%3A11Z&spr=https&sig=A99ZFhDK2fwHnYl5Nd1dm%2Bcd1xJbolHz5wZLG9ewOvs%3D",
-    "url": "https://azfuncv2linuxstore.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-31T05%3A17%3A11Z&st=2019-03-31T03%3A12%3A11Z&spr=https&sig=A99ZFhDK2fwHnYl5Nd1dm%2Bcd1xJbolHz5wZLG9ewOvs%3D"
+    "url": "https://MyFunctionApp.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-31T05%3A17%3A11Z&st=2019-03-31T03%3A12%3A11Z&spr=https&sig=A99ZFhDK2fwHnYl5Nd1dm%2Bcd1xJbolHz5wZLG9ewOvs%3D"
 }
 ```
 
 You can access to the blob with `url` that is included in the response body
 
 ```sh
-open https://MyFunctionApp.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-29T14%3A50%3A46Z&st=2019-03-29T12%3A45%3A46Z&spr=https&sig=%2FS7Z0qnrk3UvyeXZtb4ZbqjTCORnRqkEE3e1O6Gb1KA%3D
+$ open https://MyFunctionApp.blob.core.windows.net/functiontest/sample.jpg?sv=2018-03-28&ss=b&srt=o&sp=rl&se=2019-03-31T05%3A17%3A11Z&st=2019-03-31T03%3A12%3A11Z&spr=https&sig=A99ZFhDK2fwHnYl5Nd1dm%2Bcd1xJbolHz5wZLG9ewOvs%3D
 ```
+
+### Uploading files to Azure Blob Storage
+
+Here is an example of uploading files to Azure Blob Storage using the http-trigger-blob-sas-token function.
+
+> [scripts/upload-blob-sas-token.py](../../scripts/upload-blob-sas-token.py)
+
+```python
+import sys
+import os
+import ntpath
+import json 
+import requests
+
+_AZFUNC_API_KEY="AZURE_FUNCTION_KEY: ex. aRVQ7Lj0vzDhY0JBYF8gpxYyEBxLwhO51JSC7X5dZFbTvROs7xNg=="
+_AZFUNC_API_URL="AZURE_FUNCTION_ENDPOINT: ex. https://<app_account>.azurewebsites.net/api/<func_name>"
+
+if __name__ == '__main__':
+    
+    file_path = "/tmp/test.jpg"
+    content_type = "image/jpeg"
+    container_name = "functiontest"
+
+    file_name = ntpath.basename(file_path)
+
+    ### Getting SAS token for uploading files to Azure Blob Storage
+    payload = {
+        "permission": "awl",
+        "container": container_name,
+        "blobname": file_name
+    }
+    r = requests.post(_AZFUNC_API_URL,
+            headers = {
+                "Content-Type" : "application/json; charset=UTF-8",
+                "x-functions-key": _AZFUNC_API_KEY
+            },
+            data=json.dumps(payload)
+        )
+    if r.status_code != 200:
+        print(f"Getting SAS token request result: status code={r.status_code}")
+        sys.exit(1) 
+
+    content_dict = json.loads(r.content.decode())
+    url = content_dict['url'] 
+
+    ### Uploading files to Azure Blob Storage
+    with open(file_path , 'rb') as filehandle:
+        r = requests.put(url,
+                data=filehandle,
+                headers={
+                    'Content-Type': content_type,
+                    'x-ms-blob-type': 'BlockBlob'
+                },
+                params={
+                    'file': file_path
+                }
+            )
+        print(f"Uploading request result: status code={r.status_code}")
+```
+
+In the example above, you will upload `/tmp/test.jpg` to a container named `functiontest` in your Azure Blob Storage.
