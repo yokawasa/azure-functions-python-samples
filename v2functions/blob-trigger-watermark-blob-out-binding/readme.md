@@ -25,7 +25,7 @@ As specified in `functions.json`, you need Azure Storage account for triggering 
       "name": "blobout",
       "type": "blob",
       "direction": "out",
-      "path": "output/{blobname}_watermarked.png",
+      "path": "output/{blobname}_watermarked.jpg",
       "connection": "MyStorageConnectionString"
     }
   ]
