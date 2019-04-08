@@ -2,7 +2,7 @@
 
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
-| `blob-trigger-watermark-blob-in-out-binding` | Watermarking Azure Function Python Sample. This function triggers on an input blob (image) and adds a watermark by calling into the Pillow library. The resulting composite image is then written back to blob storage using a blob output binding.
+| `blob-trigger-watermark-blob-in-out-binding` | Azure Function Python Sample that watermarks an image. This function triggers on an input blob (image) and adds a watermark by calling into the Pillow library. The resulting composite image is then written back to blob storage using a blob output binding. | Blob Storage | Blob Storage | Blob Storage |
 
 ## Sample output
 ![](sample.jpg)
