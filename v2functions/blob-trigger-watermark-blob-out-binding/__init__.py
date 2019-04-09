@@ -47,7 +47,12 @@ def main(blobin: func.InputStream, blobout: func.Out[bytes], context: func.Conte
     
     img = Image.new('RGBA', (base_image.width, base_image.height), (0, 0, 0, 0))
     img.paste(base_image, (0, 0))
-    img.paste(watermark, position, mask=watermark)
+    # Watermark may not have an alpha channel,
+    # therefore no mask to apply
+    try:
+        img.paste(watermark, position, mask=watermark)
+    except ValueError:
+        img.paste(watermark, position)
     # Render image on screen (save to a temp file and calls
     # xv on Linux and Preview.app on Mac)
     # We could improve this by drawing straight to a OpenCV
