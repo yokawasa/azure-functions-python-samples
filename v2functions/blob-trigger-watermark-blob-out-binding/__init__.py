@@ -14,6 +14,7 @@ WATERMARK_WIDTH_RATIO = 7
 # since it's an image we'll be writing back.
 # See this for more -
 # https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#outputs
+# https://docs.microsoft.com/en-us/python/api/azure-functions/azure.functions.out?view=azure-python
 def main(blobin: func.InputStream, blobout: func.Out[bytes], context: func.Context):
     logging.info(f"--- Python blob trigger function processed blob \n"
                  f"----- Name: {blobin.name}\n"
