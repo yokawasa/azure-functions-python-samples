@@ -71,6 +71,9 @@ az storage container create  \
 func host start
 ```
 
+### Try it out
+Upload an image to `input` blob container under the storage account to try it out. The final watermarked composite should surface in the `output` container. If you're developing locally it should also render it on screen (works on Mac, Linux, WSL with Xming X server, unsure about Windows).
+
 ### Publish the function to the cloud
 
 Publish the function to the cloud
@@ -88,6 +91,3 @@ az webapp config appsettings set \
   --settings \
     MyStorageConnectionString=$FUNCTION_STORAGE_CONNECTION
 ```
-
-### Try it out
-Upload an image to `input` blob container under the storage account to try it out. The final watermarked composite should surface in the `output` container. If you're developing locally it should also render it on screen (works on Mac, Linux, WSL with Xming X server, unsure about Windows).
