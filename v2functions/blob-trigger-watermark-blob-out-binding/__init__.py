@@ -23,11 +23,17 @@ def main(blobin: func.InputStream, blobout: func.Out[bytes], context: func.Conte
     # Pillow calls blobin.read() so only
     # pass in the image object
     input_image = blobin
-
     watermark_image = f'{context.function_directory}/watermark.png'
 
-    base_image = Image.open(input_image)
-    watermark = Image.open(watermark_image)
+    try:
+        base_image = Image.open(input_image)
+        watermark = Image.open(watermark_image)
+    except OSError as e:
+        print(f'EXCEPTION: Unable to read input as image. {e}')
+        sys.exit(254)
+    except Exception as e:
+        print(f'EXCEPTION: {e}')
+        sys.exit(255)
 
     # Resize base image if too large
     if base_image.width > FINAL_COMPOSITE_MAX_WIDTH or base_image.height > FINAL_COMPOSITE_MAX_HEIGHT:
