@@ -10,6 +10,10 @@ FINAL_COMPOSITE_MAX_WIDTH = 700
 # Set watermark 7 times smaller in width than base image
 WATERMARK_WIDTH_RATIO = 7
 
+# Note the type annotation for our output blob, func.Out[bytes],
+# since it's an image we'll be writing back.
+# See this for more -
+# https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#outputs
 def main(blobin: func.InputStream, blobout: func.Out[bytes], context: func.Context):
     logging.info(f"--- Python blob trigger function processed blob \n"
                  f"----- Name: {blobin.name}\n"
