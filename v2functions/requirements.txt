@@ -2,3 +2,4 @@ azure-functions==1.0.0a5
 azure-functions-worker==1.0.0a6
 requests==2.20.1
 feedparser==5.2.1
+Pillow==6.0.0

@@ -1,0 +1,19 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "blobin",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "input/{blobname}.{blobextension}",
+      "connection": "MyStorageConnectionString"
+    },
+    {
+      "name": "blobout",
+      "type": "blob",
+      "direction": "out",
+      "path": "output/{blobname}_watermarked.jpg",
+      "connection": "MyStorageConnectionString"
+    }
+  ]
+}
