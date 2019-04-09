@@ -72,7 +72,7 @@ func host start
 ```
 
 ### Try it out
-Upload an image to `input` blob container under the storage account to try it out. The final watermarked composite should surface in the `output` container. If you're developing locally it should also render it on screen (works on Mac, Linux, WSL with Xming X server, unsure about Windows).
+Upload an image to `input` blob container under the storage account to try it out. The final watermarked composite should surface in the `output` container. When developing locally it should also render it on screen if you have [imagemagick][1] or [xv][2] installed (works on Mac, Linux, WSL with Xming X server, unsure what happens on native Windows).
 
 ### Publish the function to the cloud
 
@@ -91,3 +91,7 @@ az webapp config appsettings set \
   --settings \
     MyStorageConnectionString=$FUNCTION_STORAGE_CONNECTION
 ```
+
+
+[1]: https://github.com/haegar/xv
+[2]: https://packages.ubuntu.com/cosmic/imagemagick
