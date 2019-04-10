@@ -1,5 +1,11 @@
-azure-functions==1.0.0a5
-azure-functions-worker==1.0.0a6
+# Minimum packages for azure functions
+azure-functions
+azure-functions-worker
+grpcio==1.14.1
+grpcio-tools==1.14.1
+protobuf==3.6.1
+six==1.11.0
+# Additional packages
 requests==2.20.1
 feedparser==5.2.1
 Pillow==6.0.0

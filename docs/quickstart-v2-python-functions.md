@@ -70,13 +70,19 @@ pip install numpy
 
 ## Manage package with requirements.txt
 
-When you develop locally using the Azure Functions Core Tools or VS Code, I guess you simply install your required python packages uinsg `pip`. It's OK in developing locally but when it comes to the production deployment, Please make sure that all your dependencies are listed in the `requirements.txt`, located at the root of your project directory. For example, here is a requirements.txt where I added my required packages and its version for my sample function 
+When you develop locally using the Azure Functions Core Tools or VS Code, I guess you simply install your required python packages uinsg `pip`. It's OK in developing locally but when it comes to the production deployment, Please make sure that all your dependencies are listed in the `requirements.txt`, located at the root of your project directory. For example, here is a requirements.txt where I added my required packages and its version for my sample function (For minimum packages, please refer to [this](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#python-version-and-package-management))
 
 ```txt
-azure-functions==1.0.0a5
-azure-functions-worker==1.0.0a6
-gensim==3.6.0
-numpy==1.15.4
+# Minimum packages for azure functions
+azure-functions
+azure-functions-worker
+grpcio==1.14.1
+grpcio-tools==1.14.1
+protobuf==3.6.1
+six==1.11.0
+
+# Additional packages
+numpy==1.15.4   
 ```
 
 Here is how you install packages listed in `requirements.txt`
@@ -88,6 +94,14 @@ pip install -r requirements.txt
 Configure trigger, input and output binding with `function.json`. Please see [Azure Functions Python developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python) for the detail
 
 ## Run the function locally
+
+When you develop functions locally, you can install the extensions you need by using the Azure Functions Core Tools from the Terminal or from a command prompt.
+After you have updated your function.json file to include all the bindings that your function needs, run the following command in the project folder. For more detail, please refer to [Local development Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-register#local-development-azure-functions-core-tools)
+
+```sh
+$ func extensions install
+```
+
 ```sh
 $ func host start
 ```
