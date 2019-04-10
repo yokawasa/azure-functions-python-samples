@@ -1,6 +1,7 @@
 import logging
 import azure.functions as func
 import io
+import sys
 from PIL import Image
 
 # Final image composite size
