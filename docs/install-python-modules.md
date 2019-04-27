@@ -1,4 +1,6 @@
-# How to install Python modules
+# [Deprecated] How to install Python modules (1.X Function runtime)
+
+**IMPORTANT - Please consider to use 2.X Python funciton as Python function in Azure function 1.X is experimental and new feature investments won't be added to 1.X Python function**
 
 Basically there are 2 ways for you to install python modules
 * 1. Installing python module using pip 

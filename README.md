@@ -6,17 +6,15 @@ Azure Functions Python Sample Codes
 Table of Contents
 - [azure-functions-python-samples](#azure-functions-python-samples)
   - [V2 Functions (Public Preview)](#v2-functions-public-preview)
-    - [V2 Functions Samples](#v2-functions-samples)
+    - [Samples](#samples)
     - [Documents](#documents)
   - [V1 Functions (Experimental)](#v1-functions-experimental)
-    - [V1 Functions Samples](#v1-functions-samples)
-    - [Documents (Deprecating)](#documents-deprecating)
   - [Contributing](#contributing)
 
 
 ## V2 Functions (Public Preview)
 
-### V2 Functions Samples
+### Samples
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
 | [cosmosdb-trigger-cosmosdb-in-binding](v2functions/blob-trigger-cosmosdb-out-binding) | Azure Functions Blob Storage Trigger Python Sample. The function gets image data from Azure Blob Trigger, gets tags for the image with [Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) ([Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)), and store the tags into Azure Cosmos DB by leveraging Cosmos DB output binding | Blob Storage | NONE | CosmosDB |
@@ -37,15 +35,10 @@ Table of Contents
 ---
 ## V1 Functions (Experimental)
 
-> [NOTE] V1 Functions sample codes are Python2 compatible by default as default Python  platform version that Azure Functions support is Python 2.7.X (as of July 1st, 2017). Some of the samples in the project also support Python 3.X. Please see the table below for supporting Python version of each sample.
-```
-print ("Python Version = '{0}'".format(platform.python_version()))
-# >>>2017-07-01T05:33:36.202 Python Version = '2.7.8'
-```
-> For those who want to change the Python runtime version to 3.5/3.6, here is a procedure: 
-[How to change the Python version being used in a Function App](docs/custom-python-version.md)
+**IMPORTANT**
+ - **By default, function apps created in the Azure portal are set to version 2.x. When possible, you should use this runtime version, where new feature investments are being made. Please see [this](https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions) for more detail on Azure Function runtime versions and supported languages.**
+ - **Please consider to use 2.X Python funciton as Python function in Azure function 1.X is experimental and new feature investments won't be added to 1.X Python function.**
 
-### V1 Functions Samples
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
 | [cosmosdb-trigger-cosmosdb-in-binding](v1functions/cosmosdb-trigger-cosmosdb-in-binding) | Azure Functions CosmosDB Trigger Python Sample. The function simply read & dump documets which are added to or changed in Azure Cosmos DB by leveraging CosmosDB input binding | CosmosDB | CosmosDB | NONE |
@@ -60,12 +53,6 @@ print ("Python Version = '{0}'".format(platform.python_version()))
 | [timer-trigger-azuresearch-index-monitoring](v1functions/timer-trigger-azuresearch-index-monitoring) | Azure Functions Timer Trigger Python Sample that get Azure Search index statistics via API and store the results into CosmosDB | Timer | NONE | CosmosDB |
 | [eventhub-trigger-table-out-bindings](v1functions/eventhub-trigger-table-out-bindings) | Azure Functions EventHub Trigger Python Sample that read message (device info) in EventHub that sent from sender and write an output record to Azure Table Storage using Table bindings | EventHub | NONE | Table Storage|
 | [proxies-simple-condition-matches](v1functions/proxies-simple-condition-matches) | Azure Functions Python Sample that re-write dynamic and static page url using Azure Functions Proxies | HTTP | NONE | HTTP |
-
-### Documents (Deprecating)
-* [V1: How to change the Python version being used in a Function App](docs/custom-python-version.md)
-* [V1: How to install the Python modules](docs/install-python-modules.md)
-* [V1: Local Git Deployment to Azure Functions (Japanese only)](docs/local-git-deployment_ja.md)
-
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/yokawasa/azure-functions-python-samples
