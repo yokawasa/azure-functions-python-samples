@@ -5,14 +5,16 @@ Azure Functions Python Sample Codes
 
 Table of Contents
 - [azure-functions-python-samples](#azure-functions-python-samples)
-  - [V2 Functions (Public Preview)](#v2-functions-public-preview)
+  - [Python functions on Azure Functions 2.X (Public Preview)](#python-functions-on-azure-functions-2x-public-preview)
     - [Samples](#samples)
     - [Documents](#documents)
-  - [V1 Functions (Experimental)](#v1-functions-experimental)
+  - [Python functions on Azure Functions 1.X (Experimental)](#python-functions-on-azure-functions-1x-experimental)
   - [Contributing](#contributing)
 
 
-## V2 Functions (Public Preview)
+## Python functions on Azure Functions 2.X (Public Preview)
+
+This is a collection of Python function samples on Azure Functions 2.X. For a comprehensive development and debugging experience, use the [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python) or [VS Code extension](https://code.visualstudio.com/tutorials/functions-extension/getting-started).
 
 ### Samples
 | Sample | Description | Trigger | In Bindings | Out Bindings
@@ -25,7 +27,7 @@ Table of Contents
 | [blob-trigger-watermark-blob-out-binding](v2functions/blob-trigger-watermark-blob-out-binding) | Azure Function Python Sample that watermarks an image. This function triggers on an input blob (image) and adds a watermark by calling into the Pillow library. The resulting composite image is then written back to blob storage using a blob output binding. | Blob Storage | Blob Storage | Blob Storage |
 
 ### Documents
-* [Quickstart V2 Python Functions](docs/quickstart-v2-python-functions.md)
+* [Quickstart V2 Python Functions with Azure Functions Core Tools](docs/quickstart-v2-python-functions.md)
 * [Azure Functions Python developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python)
 * [Zip push deployment for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push)
 * [Work with Azure Functions Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies)
@@ -33,7 +35,7 @@ Table of Contents
 * [Create a function triggered by Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-cosmos-db-triggered-function)
 
 ---
-## V1 Functions (Experimental)
+## Python functions on Azure Functions 1.X (Experimental)
 
 **IMPORTANT**
  - **By default, function apps created in the Azure portal are set to version 2.x. When possible, you should use this runtime version, where new feature investments are being made. Please see [this](https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions) for more detail on Azure Function runtime versions and supported languages.**

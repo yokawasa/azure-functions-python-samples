@@ -1,4 +1,7 @@
-# Quickstart V2 Python Functions
+# Quickstart V2 Python Functions with Azure Functions Core Tools
+
+This is a quickstart on how you create and deploy a Python function on Azure Functions 2.X using the [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python).
+
 
 ## Prerequisites
 - Install Python 3.6
