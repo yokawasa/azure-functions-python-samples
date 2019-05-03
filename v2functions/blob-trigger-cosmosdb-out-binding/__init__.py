@@ -5,6 +5,7 @@ import http.client, urllib.parse, base64, json
 import requests
 
 subscription_key = os.environ['ComputerVisionSubscription']
+api_endpoint = os.environ['ComputerVisionApiEndpoint']
 
 headers = {
     # Request headers.
@@ -25,8 +26,9 @@ def main(myblob: func.InputStream, doc: func.Out[func.Document]):
 
     img_data = myblob.read()
     try:
-        api_url = "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?%s" % params
-        print ("API URL:{}".format(api_url))
+        api_url = "{0}vision/v1.0/analyze?{1}".format(api_endpoint, params)
+        logging.info("API URL:{}".format(api_url))
+
         r = requests.post(api_url,
                     headers=headers,
                     data=img_data)
