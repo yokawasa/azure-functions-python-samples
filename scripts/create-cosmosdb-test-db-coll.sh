@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e -x
 
-COSMOSDB_ACCOUNT_NAME="azfuncv2db"
-RESOURCE_GROUP="RG-azfuncv2"
-DATABASE_NAME="testdb"
+COSMOSDB_ACCOUNT_NAME="<COSMOS DB ACCOUNT NAME>"
+RESOURCE_GROUP="<RESOURCE GROUPP MAME>"
+DATABASE_NAME="<COSMOS DB DATABASE NAME>"
 CREATE_LEASE_COLLECTION=1         # yes,no=(1,0)
-LEASES_COLLECTION_NAME="leases"
+LEASES_COLLECTION_NAME="<LEASE COLLECTION NAME>"
 
 az cosmosdb create \
     --name $COSMOSDB_ACCOUNT_NAME \
@@ -13,6 +13,7 @@ az cosmosdb create \
     --resource-group $RESOURCE_GROUP
 # Get Key
 COSMOSDB_KEY=$(az cosmosdb list-keys --name $COSMOSDB_ACCOUNT_NAME --resource-group $RESOURCE_GROUP --output tsv |awk '{print $1}')
+echo "Cosmos DB Key: $COSMOSDB_KEY"
 
 # Create Database
 az cosmosdb database create \
