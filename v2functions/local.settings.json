@@ -5,6 +5,7 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "MyCosmosDBConnectionString": "<CosmosDB Connection String>",
     "ComputerVisionSubscription": "<Azure Computer Vision API SubscriptionKey>",
+    "ComputerVisionApiEndpoint": "<Azure Computer Vision API Endpoint",
     "MyStorageConnectionString": "<Storage Connection String>"
   }
 }
