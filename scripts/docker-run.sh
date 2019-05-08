@@ -13,12 +13,11 @@ RESOURCE_GROUP="<RESOURCE GROUPP MAME>"
 REGION="<REGION NAME: eastus>"
 STORAGE_ACCOUNT_NAME="<STORAGE ACCOUNT NAME>"
 COSMOSDB_ACCOUNT_NAME="<COSMOSDB ACCOUNT NAME>"
-COMPUTER_VSION_API_SUBSCRIPTION="<COMPUTER VISION API SUBSCRIPTION>"
-COMPUTER_VSION_API_ENDPOINT="<COMPUTER VSION API ENDPOINT>"
-## example: COMPUTER_VSION_API_ENDPOINT="https://westus.api.cognitive.microsoft.com/"
+COGNITIVE_ACCOUNT_NAME="<COGNITIVE ACCOUNT NAME>"
+COGNITIVE_RESOURCE_GROUP="<COGNITIVE RESOURCE GROUP>"
 #############################################################
 
-FUNC_PROJECT_DIR="$cwd/../v2functions.working"
+FUNC_PROJECT_DIR="$cwd/../v2functions"
 
 TAG=`cat $FUNC_PROJECT_DIR/VERSION`
 
@@ -28,6 +27,13 @@ STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
 COSMOSDB_CONNECTION_STRING=$(az cosmosdb list-connection-strings \
 --resource-group $RESOURCE_GROUP --name $COSMOSDB_ACCOUNT_NAME \
 --query connectionStrings --output tsv | head -1 |  awk '{print $1}')
+
+COMPUTER_VSION_API_ENDPOINT=$(az cognitiveservices account show \
+-n $COGNITIVE_ACCOUNT_NAME -g $COGNITIVE_RESOURCE_GROUP --output tsv |awk '{print $1}')
+
+COMPUTER_VSION_API_SUBSCRIPTION=$(az cognitiveservices account keys list \
+-n $COGNITIVE_ACCOUNT_NAME -g $COGNITIVE_RESOURCE_GROUP --output tsv |awk '{print $1}')
+
 
 docker run -p 8080:80 -it \
   -e AzureWebJobsStorage="$STORAGE_CONNECTION_STRING" \

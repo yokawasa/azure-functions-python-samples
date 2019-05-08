@@ -9,6 +9,8 @@ expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
 #############################################################
 DOCKER_ID="<Docker ID>"
 CONTAINER_IMAGE_NAME="<Container Image Name>"
+RESOURCE_GROUP="<RESOURCE GROUP>"
+STORAGE_ACCOUNT_NAME="<STORAGE ACCOUNT NAME>"
 #############################################################
 
 FUNC_PROJECT_DIR="$cwd/../v2functions"
@@ -21,5 +23,4 @@ STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
 
 docker run -p 8080:80 -it \
   -e AzureWebJobsStorage="$STORAGE_CONNECTION_STRING" \
-  -e MyStorageConnectionString="$STORAGE_CONNECTION_STRING"
   $DOCKER_ID/$CONTAINER_IMAGE_NAME:$TAG
