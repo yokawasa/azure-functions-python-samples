@@ -12,14 +12,10 @@ APP_NAME="<FUNCTION APP NAME>" #  the name needs to be unique across all apps in
 # Linux Consumption plan is only available in limited regions
 # see https://github.com/Azure/Azure-Functions/wiki/Azure-Functions-on-Linux-Preview#prerequisites
 
-echo "Create Resource Group: $RESOURCE_GROUP"
-az group create --name $RESOURCE_GROUP --location $REGION
-
-echo "Create an Azure Storage account: $STORAGE_ACCOUNT"
-az storage account create --name $STORAGE_ACCOUNT \
-  --location $REGION \
-  --resource-group $RESOURCE_GROUP \
-  --sku Standard_LRS
+RESOURCE_GROUP="RG-azfuncv2-t"
+REGION="westus"
+STORAGE_ACCOUNT="azfuncv2linuxstore2"
+APP_NAME="yoichikaazfuncv2linux002" #  the name needs to be unique across all apps in Azure.
 
 echo "Create a empty function app on Linux (Consumption Plan): $APP_NAME"
 az functionapp create \
