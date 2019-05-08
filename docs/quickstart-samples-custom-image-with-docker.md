@@ -14,6 +14,8 @@ This is a quickstart on how you start running Python function samples as a custo
     - [1. Run the image with minimum configuration](#1-run-the-image-with-minimum-configuration)
     - [2. Run the image with full configuration](#2-run-the-image-with-full-configuration)
   - [Test access to the functions](#test-access-to-the-functions)
+  - [Tips](#tips)
+    - [Console Logging Option](#console-logging-option)
   - [LINKS](#links)
 
 
@@ -122,6 +124,13 @@ curl -s http://localhost:8080/api/http-trigger-dump-request |jq
   "get_body": ""
 }
 
+```
+
+## Tips
+### Console Logging Option
+By default, Console Logging is not enabled, and you can enable it by setting the following option as an ENV variable in Dockerfile or giving the option in running docker:
+```
+ENV AzureFunctionsJobHost__Logging__Console__IsEnabled=true
 ```
 
 ## LINKS
