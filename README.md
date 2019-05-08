@@ -24,10 +24,12 @@ This is a collection of Python function samples on Azure Functions 2.X. For a co
 | [queue-trigger-blob-in-out-binding](v2functions/queue-trigger-blob-in-out-binding) | Azure Functions Queue Trigger Python Sample. The function gets a file name from queue message, reads a blob file named the file name using Blob Input Binding, then ROT13 encodes the obtained clear text, and finally stores it into Azure Blob Storage using Blob Output Binding  | Queue Storage | Blob Storage | Blob Storage |
 | [timer-trigger-cosmos-output-binding](v2functions/timer-trigger-cosmosdb-output-binding) | Azure Functions Timer Trigger Python Sample. The function gets blog RSS feed and store the results into CosmosDB using Cosmos DB output binding | Timer | NONE | CosmosDB |
 | [http-trigger-blob-sas-token](v2functions/http-trigger-blob-sas-token) | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | HTTP | NONE | HTTP |
+| [http-trigger-dump-request](v2functions/http-trigger-dump-request) | Azure Function HTTP Trigger Python Sample that returns request dump info with JSON format | HTTP | NONE | HTTP |
 | [blob-trigger-watermark-blob-out-binding](v2functions/blob-trigger-watermark-blob-out-binding) | Azure Function Python Sample that watermarks an image. This function triggers on an input blob (image) and adds a watermark by calling into the Pillow library. The resulting composite image is then written back to blob storage using a blob output binding. | Blob Storage | Blob Storage | Blob Storage |
 
 ### Documents
 * [Quickstart V2 Python Functions with Azure Functions Core Tools](docs/quickstart-v2-python-functions.md)
+* [Quickstart Function Samples as a Custom image with Docker](docs/quickstart-samples-custom-image-with-docker.md)
 * [Azure Functions Python developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python)
 * [Zip push deployment for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/deployment-zip-push)
 * [Work with Azure Functions Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies)
