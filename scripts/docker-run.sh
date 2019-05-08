@@ -41,5 +41,4 @@ docker run -p 8080:80 -it \
   -e MyCosmosDBConnectionString="$COSMOSDB_CONNECTION_STRING" \
   -e ComputerVisionSubscription="$COMPUTER_VSION_API_SUBSCRIPTION" \
   -e ComputerVisionApiEndpoint="$COMPUTER_VSION_API_ENDPOINT" \
-  -e AzureFunctionsJobHost__Logging__Console__IsEnabled=true \
   $DOCKER_ID/$CONTAINER_IMAGE_NAME:$TAG
