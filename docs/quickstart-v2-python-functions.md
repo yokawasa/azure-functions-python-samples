@@ -13,7 +13,7 @@ This is a quickstart on how you create and deploy a Python function on Azure Fun
     - [function.json](#functionjson)
   - [Update the host.json file to use extension bundles,](#update-the-hostjson-file-to-use-extension-bundles)
   - [Run the function locally](#run-the-function-locally)
-    - [Publishing to Azure](#publishing-to-azure)
+  - [Publishing to Azure](#publishing-to-azure)
   - [LINKS](#links)
 
 
@@ -139,7 +139,7 @@ func host start
 For more detail, please refer to [Local development Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-register#local-development-azure-functions-core-tools)
 > 
 
-### Publishing to Azure
+## Publishing to Azure
 
 ```sh
 APP_NAME="your function name"
