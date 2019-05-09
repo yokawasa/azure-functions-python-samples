@@ -3,18 +3,31 @@
 This is a quickstart on how you create and deploy a Python function on Azure Functions 2.X using the [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python).
 
 
+<!-- TOC -->
+- [Quickstart V2 Python Functions with Azure Functions Core Tools](#quickstart-v2-python-functions-with-azure-functions-core-tools)
+  - [Prerequisites](#prerequisites)
+  - [Create a Python functions project](#create-a-python-functions-project)
+    - [Create Python functions from templates](#create-python-functions-from-templates)
+    - [Create and activate a virtual environment](#create-and-activate-a-virtual-environment)
+  - [Manage package with requirements.txt](#manage-package-with-requirementstxt)
+    - [function.json](#functionjson)
+  - [Update the host.json file to use extension bundles,](#update-the-hostjson-file-to-use-extension-bundles)
+  - [Run the function locally](#run-the-function-locally)
+    - [Publishing to Azure](#publishing-to-azure)
+  - [LINKS](#links)
+
+
 ## Prerequisites
-- Install Python 3.6
-- Install [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#v2) version 2.2.70 or later
+- Install `Python 3.6`
+- Install [Azure Core Tools version 2.x](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#v2) (the latest one)
 
-
-```sh
-# Linux & Windows
-$ npm install -g azure-functions-core-tools
-
-# Mac
-$ brew tap azure/functions
-$ brew install azure-functions-core-tools 
+```bash
+# Install the latest Azure Core Tools version 2.x
+npm install -g azure-functions-core-tools
+  
+# If it's on macOS, you can install with homebrew
+brew tap azure/functions
+brew install azure-functions-core-tools
 ```
 
 ## Create a Python functions project
@@ -96,18 +109,35 @@ pip install -r requirements.txt
 ### function.json
 Configure trigger, input and output binding with `function.json`. Please see [Azure Functions Python developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python) for the detail
 
+
+## Update the host.json file to use extension bundles, 
+
+In version 2.x of the Azure Functions runtime, you have to explicitly register the binding extensions that you use in your function app. To use extension bundles, update the `host.json` file to include the following entry for extensionBundle:
+> host.json
+```json
+{
+    "version":  "2.0",
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[1.*, 2.0.0)"
+    }
+}
+```
+> [NOTE] As an alternative way, you can manually install extension bundles by running a command - `func extensions install` so appropritate binding extensions are installed in `bin` directory. But if you already added the entry for extensionBundle in `host.json` like above, you don't need this.
+> ```bash
+> # change directory to a project directory
+> cd functions
+> # Manually install extension bundles using func command (Azure Core Tools)
+> func extensions install
+> ```
+
 ## Run the function locally
 
-When you develop functions locally, you can install the extensions you need by using the Azure Functions Core Tools from the Terminal or from a command prompt.
-After you have updated your function.json file to include all the bindings that your function needs, run the following command in the project folder. For more detail, please refer to [Local development Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-register#local-development-azure-functions-core-tools)
-
 ```sh
-$ func extensions install
+func host start
 ```
-
-```sh
-$ func host start
-```
+For more detail, please refer to [Local development Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-register#local-development-azure-functions-core-tools)
+> 
 
 ### Publishing to Azure
 

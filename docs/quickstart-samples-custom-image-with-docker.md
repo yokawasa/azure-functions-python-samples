@@ -23,7 +23,7 @@ This is a quickstart on how you start running Python function samples as a custo
 - [Docker](https://docs.docker.com/)
 
 ## Git clone source code
-```sh
+```bash
 git clone https://github.com/yokawasa/azure-functions-python-samples.git
 ```
 
@@ -123,7 +123,6 @@ curl -s http://localhost:8080/api/http-trigger-dump-request |jq
   "params": {},
   "get_body": ""
 }
-
 ```
 
 ## Tips
