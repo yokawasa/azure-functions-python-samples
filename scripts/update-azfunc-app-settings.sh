@@ -27,9 +27,9 @@ az webapp config appsettings set \
   -n $APP_NAME \
   -g $RESOURCE_GROUP \
   --settings \
-  ComputerVisionSubscription=$MY_COMPUTER_VISION_APIKEY \
-  ComputerVisionApiEndpoint=$MY_COMPUTER_VISION_ENDPOINT \
-  MyStorageConnectionString=$MY_STORAGE_CONNECTION \
-  MyCosmosDBConnectionString=$MY_COSMOS_DB_CONNECTION \
+  ComputerVisionSubscription=$COMPUTER_VSION_API_SUBSCRIPTION \
+  ComputerVisionApiEndpoint=$COMPUTER_VSION_API_ENDPOINT=\
+  MyStorageConnectionString=$STORAGE_CONNECTION_STRING \
+  MyCosmosDBConnectionString=$COSMOSDB_CONNECTION_STRING
 
 echo "Done"

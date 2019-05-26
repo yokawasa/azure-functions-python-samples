@@ -23,4 +23,5 @@ STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
 
 docker run -p 8080:80 -it \
   -e AzureWebJobsStorage="$STORAGE_CONNECTION_STRING" \
+  -e AzureFunctionsJobHost__Logging__Console__IsEnabled="true" \
   $DOCKER_ID/$CONTAINER_IMAGE_NAME:$TAG
