@@ -142,7 +142,7 @@ def main(req: func.HttpRequest) -> str:
            storage_key = ss[1] 
     if not storage_account or not storage_key:
         return write_http_response(
-            400, 
+            400,
             { 'message': 'Function configuration error: NO Azure Storage connection string found!' }
         )  
 
@@ -159,13 +159,24 @@ def main(req: func.HttpRequest) -> str:
     try:
         req_body = req.get_json()
     except ValueError:
-        pass
+        # Case: Empty body
+        return write_http_response(
+            400,
+            { 'message': 'Invalid HTTP request body' }
+        )
     else:
+        # Case: Exception raised in get_json()
+        if not 'req_body' in locals():
+            return write_http_response(
+                400,
+                { 'message': 'Invalid HTTP request body' }
+            )
+        # Case: Invalid parameters
         if not req_body.get('permission') or not req_body.get('container'):
             return write_http_response(
                 400,
                 { 'message': 'Permission and container parameters must be included in HTTP request body' }
-            )   
+            )
 
     permission = req_body.get('permission')
     container_name = req_body.get('container')
@@ -175,9 +186,9 @@ def main(req: func.HttpRequest) -> str:
         token_ttl = int(req_body.get('ttl'))
         if token_ttl < 1:
             return write_http_response(
-                400, 
+                400,
                 { 'message': 'Token ttl must be digit and more than 0' }
-            )  
+            )
 
     # Generate SAS Token
     token_dict = generate_sas_token(
