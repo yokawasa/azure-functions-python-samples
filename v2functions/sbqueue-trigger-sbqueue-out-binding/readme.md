@@ -2,7 +2,7 @@
 
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
-| `sbqueue-trigger-blob-in-out-binding` | Azure Functions Service Bus Queue Trigger Python Sample. The function demonstrates reading from a Service Bus queue and placing a new message into a Service Bus queue. | Service Bus Queue | None | Service Bus Queue |
+| `sbqueue-trigger-sbqueue-out-binding` | Azure Functions Service Bus Queue Trigger Python Sample. The function demonstrates reading from a Service Bus queue and placing a new message into a Service Bus queue. | Service Bus Queue | None | Service Bus Queue |
 
 ## Configurations
 
