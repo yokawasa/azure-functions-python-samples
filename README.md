@@ -26,6 +26,7 @@ This is a collection of Python function samples on Azure Functions 2.X. For a co
 | [http-trigger-blob-sas-token](v2functions/http-trigger-blob-sas-token) | Azure Function HTTP Trigger Python Sample that returns a SAS token for Azure Storage for the specified container and blob name | HTTP | NONE | HTTP |
 | [http-trigger-dump-request](v2functions/http-trigger-dump-request) | Azure Function HTTP Trigger Python Sample that returns request dump info with JSON format | HTTP | NONE | HTTP |
 | [blob-trigger-watermark-blob-out-binding](v2functions/blob-trigger-watermark-blob-out-binding) | Azure Function Python Sample that watermarks an image. This function triggers on an input blob (image) and adds a watermark by calling into the Pillow library. The resulting composite image is then written back to blob storage using a blob output binding. | Blob Storage | Blob Storage | Blob Storage |
+| [sbqueue-trigger-blob-in-out-binding](v2functions/sbqueue-trigger-sbqueue-out-binding) | Azure Functions Service Bus Queue Trigger Python Sample. The function demonstrates reading from a Service Bus queue and placing a message into an output Service Bus queue. | Service Bus Queue | None | Service Bus Queue |
 
 ### Documents
 * [Quickstart V2 Python Functions with Azure Functions Core Tools](docs/quickstart-v2-python-functions.md)
