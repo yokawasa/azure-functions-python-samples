@@ -8,6 +8,7 @@
 ![](sample.jpg)
 
 ## Configurations
+
 As specified in `functions.json`, you need Azure Storage account for triggering functions, input & output binding.
 
 ```json
@@ -61,6 +62,14 @@ az storage container create  \
     --name "output" \
     --account-name $STORAGE_ACCOUNT \
     --account-key $ACCESS_KEY
+```
+
+### Update local.settings.json
+
+Update `../local.settings.json` with Storage Connection String.  Replace `<Storage Connection String>` with the value from below
+
+```sh
+az storage account show-connection-string --name $STORAGE_ACCOUNT --resource-group $RESOURCE_GROUP --output tsv
 ```
 
 ## How to develop and publish the functions
