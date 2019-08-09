@@ -133,6 +133,8 @@ In version 2.x of the Azure Functions runtime, you have to explicitly register t
 
 ## Run the function locally
 
+From inside the project directory (e.g. `v2functions`), run:
+
 ```sh
 func host start
 ```
