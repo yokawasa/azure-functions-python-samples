@@ -1,6 +1,6 @@
 # [Deprecated] How to change the Python version used in a Function App (1.X Function runtime)
 
-**IMPORTANT - Please consider to use 2.X Python funciton as Python function in Azure function 1.X is experimental and new feature investments won't be added to 1.X Python function**
+**IMPORTANT - Please consider to use 2.X Python function as Python function in Azure function 1.X is experimental and new feature investments won't be added to 1.X Python function**
 
 ## 1. Create Function App (if you don't have the one yet)
 
