@@ -2,7 +2,7 @@
 
 - [http-trigger-blob-sas-token (Python)](#http-trigger-blob-sas-token-python)
   - [Local development](#local-development)
-  - [Test acccess](#test-acccess)
+  - [Test access](#test-access)
   - [Publish the function to the cloud](#publish-the-function-to-the-cloud)
 
 | Sample | Description | Trigger | In Bindings | Out Bindings
@@ -15,7 +15,7 @@
 func host start
 ```
 
-## Test acccess
+## Test access
 ```sh
 curl -s http://localhost:7071/api/http-trigger-dump-request |jq
 {
