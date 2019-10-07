@@ -1,0 +1,53 @@
+
+
+# Action Requires
+# 1. Setup the AZURE_CREDENTIALS secrets in your GitHub Repository
+# 2. Replace PLEASE_REPLACE_THIS_WITH_YOUR_FUNCTION_APP_NAME with your Azure function app name
+# 3. Add this yaml file to your project's .github/workflows/
+# 4. Push your local project to your GitHub Repository
+
+
+name: Linux_Python_Workflow
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@master
+
+    - name: 'Setup Python 3.6'
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.6
+
+    - name: 'Run pip'
+      shell: bash
+      run: |
+        # If your function app project is not located in your repository's root
+        # Please change your directory for pip in pushd
+        pushd .
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt --target=".python_packages/lib/python3.6/site-packages"
+        popd
+
+    - name: 'Run Azure Functions Action'
+      uses: Azure/functions-action@v1
+      id: fa
+      with:
+        app-name: ${{ secrets.FUNCTION_APP_NAME }}
+        # If your function app project is not located in your repository's root
+        # Please consider prefixing the project path in this package parameter
+        package: '.'
+        # If you want to use publish profile credentials instead of Azure Service Principal
+        # Please uncomment the following line
+        publish-profile: ${{ secrets.SCM_CREDENTIALS }}
+
+    - name: 'use the published functionapp url in upcoming steps'
+      run: |
+       echo "${{ steps.fa.outputs.app-url }}"
