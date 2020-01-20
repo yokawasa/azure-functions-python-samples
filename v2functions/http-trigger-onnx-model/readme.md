@@ -2,9 +2,11 @@
 
 | Sample | Description | Trigger | In Bindings | Out Bindings
 | ------------- | ------------- | ------------- | ----------- | ----------- |
-| `http-trigger-onnx-model`` | This function demonstrates running an inferrence against an ONNX model. | HTTP | NONE | HTTP |
+| `http-trigger-onnx-model` | This function demonstrates running an inference using an ONNX model. It is triggered by an HTTP request. See _[Try it out](#try-it-out)_ for usage. | HTTP | NONE | HTTP |
 
-The style transfer model used in this function is called _Rain Princess_ and is downloaded from the [ONNX Model Zoo][3]. Artistic style transfer models mix the content of an image with the style of another image. Examples of the styles can be seen [here][4].
+The style transfer model used in this function is called _Rain Princess_. It is downloaded from the [ONNX Model Zoo][3]. 
+
+Artistic style transfer models mix the content of an image with the style of another image. Examples of the styles can be seen [here][4].
 
 Open Neural Network Exchange (ONNX) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
 
@@ -18,21 +20,9 @@ This example is probably not going to age well. However the pun stands on its ow
 
 ## Dependencies
 ```
-Pillow=7.0.0
+Pillow==7.0.0
 onnxruntime==1.1.0
 numpy==1.18.1
-```
-
-## Logging includes model metadata
-
-```
-[1/19/20 8:00:25 PM] Python HTTP trigger function processed a request.
-[1/19/20 8:00:25 PM] Model metadata:
-[1/19/20 8:00:25 PM]     Graph name: torch-jit-export
-[1/19/20 8:00:25 PM]     Model version: 9223372036854775807
-[1/19/20 8:00:25 PM]     Producer: pytorch
-[1/19/20 8:00:25 PM] Preprocessing image...
-[1/19/20 8:00:25 PM] Running inference on ONNX model...
 ```
 
 ## Configuration
