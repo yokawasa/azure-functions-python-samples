@@ -26,7 +26,7 @@ numpy==1.18.1
 ```
 
 ## Configuration
-As specified in `functions.json`, this function is triggered by an HTTP request. It expects a POST request with raw image bytes (JPEG/PNG/whatever the Pillow library can open). Output is an HTTP response with the resulting styled transferred image (JPEG encoded).
+As specified in `functions.json`, this function is triggered by an HTTP request. It expects a POST request with raw image bytes (JPEG/PNG/whatever the Pillow library can open). Output is an HTTP response with the resulting style transferred image (JPEG encoded).
 
 ```json
 {
