@@ -37,7 +37,14 @@ def run_inference(image, context):
     original_image_size = image.size[0], image.size[1]
     logging.info('Preprocessing image...')
     # Model expects a 224x224 shape input
-    image = image.resize((224, 224), Image.ANTIALIAS)
+    image = image.resize((224, 224), Image.LANCZOS)
+    bands = image.getbands()
+    if bands == ('R', 'G', 'B'):
+        logging.info(f'Image is RGB. No conversion necessary.')
+    else:
+        logging.info(f'Image is {bands}, converting to RGB...')
+        image = image.convert('RGB')
+
     x = np.array(image).astype('float32')
     x = np.transpose(x, [2, 0, 1])
     x = np.expand_dims(x, axis=0)
