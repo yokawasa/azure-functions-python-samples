@@ -46,6 +46,7 @@ As specified in `functions.json`, this function is triggered by an HTTP request.
       "direction": "out",
       "name": "$return"
     }
+  ]
 }
 ```
 
