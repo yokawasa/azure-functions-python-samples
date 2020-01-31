@@ -25,6 +25,8 @@ onnxruntime==1.1.0
 numpy==1.18.1
 ```
 
+Make sure you have these in your `requirements.txt` at the root of your function app.
+
 ## Configuration
 As specified in `functions.json`, this function is triggered by an HTTP request. It expects a POST request with raw image bytes (JPEG/PNG/whatever the Pillow library can open). Output is an HTTP response with the resulting style transferred image (JPEG encoded).
 
