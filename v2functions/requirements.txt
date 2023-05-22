@@ -6,7 +6,7 @@ grpcio-tools~=1.20.1
 protobuf==3.6.1
 six==1.11.0
 # Additional packages
-requests==2.20.1
+requests==2.31.0
 feedparser==5.2.1
 Pillow==8.2.0
 numpy==1.18.1
